@@ -1,5 +1,4 @@
 <resources>
     <string name="app_name">Dashboard</string>
-    <string name="edit_message">Enter message</string>
-    <string name="send_message">SEND</string>
+    <string name="submit" translatable="false">SUBMIT</string>
 </resources>
