@@ -5,13 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OrderConfirmed"
+    android:orientation="vertical"
     android:gravity="center">
 
-
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_confirmation" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Order Confirmed"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textColor="#000" />
 </LinearLayout>

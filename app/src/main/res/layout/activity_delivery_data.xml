@@ -173,7 +173,7 @@
                         android:id="@+id/door"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="54,"
+                        android:hint="16,"
                         android:textColor="#fff"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -182,7 +182,7 @@
                         android:id="@+id/address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="National Housing Scheme"
+                        android:hint="Liberty Plaza"
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
@@ -190,7 +190,7 @@
                         android:id="@+id/city"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Wattala"
+                        android:hint="Colombo 3."
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
