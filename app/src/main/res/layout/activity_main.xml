@@ -13,6 +13,7 @@
     android:orientation="vertical">
 
     <EditText
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
@@ -20,12 +21,14 @@
         android:background="@drawable/textbox"/>
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="50dp"
         android:hint="Password"
         android:background="@drawable/textbox"/>
     <Button
+        android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/box"
