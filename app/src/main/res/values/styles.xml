@@ -8,6 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
+<style name="recipeTitle">
+    <item name="android:textSize">25dp</item>
+</style>
+<style name="hover">
+    <item name="android:background">
 
-
+    </item>
+</style>
 </resources>
