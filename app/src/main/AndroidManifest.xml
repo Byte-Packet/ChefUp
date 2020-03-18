@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/chefup"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DeliveryData"></activity>
+        <activity android:name=".Delivered" />
+        <activity android:name=".Preparing" />
+        <activity android:name=".OrderConfirmed" />
+        <activity android:name=".DeliveryData" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

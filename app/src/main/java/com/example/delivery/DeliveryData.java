@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class DeliveryData extends AppCompatActivity {
 
     TextView door,address,city,contact;
-    Button add;
+    Button select,edit,delete,add;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +22,19 @@ public class DeliveryData extends AppCompatActivity {
         address = findViewById(R.id.address);
         city = findViewById(R.id.city);
         contact = findViewById(R.id.contact);
+
+        select = findViewById(R.id.select);
+        edit = findViewById(R.id.edit);
+        delete = findViewById(R.id.delete);
         add = findViewById(R.id.add);
 
-        String door = getIntent().getStringExtra("door");
+        select.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DeliveryData.this,OrderConfirmed.class);
+                startActivity(intent);
+            }
+        });
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
