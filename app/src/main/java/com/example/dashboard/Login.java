@@ -2,7 +2,6 @@ package com.example.dashboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     private EditText name;
     private EditText password;
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login);
 
         name = (EditText)findViewById(R.id.username);
         password = (EditText)findViewById(R.id.password);
@@ -35,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void validate(String name, String password){
         if(name.equals("User")&& password.equals("1234")) {
-            Intent intent = new Intent(MainActivity.this, Menu.class);
+            Intent intent = new Intent(Login.this, Menu.class);
             startActivity(intent);
         }
         else{
-            Toast.makeText(MainActivity.this, "Incorrect Login", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Login.this, "Incorrect Login", Toast.LENGTH_SHORT).show();
         }
 
 
