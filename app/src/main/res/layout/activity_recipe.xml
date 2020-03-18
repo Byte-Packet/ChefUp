@@ -12,18 +12,34 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="215dp"
-            android:background="@drawable/chicken"/>
-
+            android:background="@drawable/chicken"
+            android:layout_marginBottom="5dp"
+            android:elevation="10dp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="20dp">
-
-            <TextView
+            android:orientation="vertical">
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n\n1 Chicken
+                android:layout_height="457dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chicken Tikka Masala"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n\n1 Chicken
 \n 1/2 cups yogurt
 \n1 tbsp paprika
 \n4 garlic cloves crushed
@@ -45,14 +61,21 @@
 \nAllow the chicken to marinade in this mixture overnight (place it in a fridge).
 \nBarbecue the chicken over an outdoor fire for 20 - 30 minutes.
 \nBrush the pieces occasionally with ghee and turn them over so they roast evenly.
-\nOnce the chicken skin begins to blacken, take it off the barbecue and serve with lemon wedges and chutney!\n"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+\nOnce the chicken skin begins to blacken, take it off the barbecue and serve with lemon wedges and chutney!"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Add to Cart" />
+                </LinearLayout>
+            </ScrollView>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp">
+            <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Add to Cart"
+            android:background="@drawable/box"/></LinearLayout>
 
     </LinearLayout>
 
