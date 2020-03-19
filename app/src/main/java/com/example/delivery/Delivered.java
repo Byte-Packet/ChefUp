@@ -20,7 +20,7 @@ public class Delivered extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Delivered.this,MainActivity.class);
+                Intent intent = new Intent(Delivered.this, AddDelivery.class);
                 startActivity(intent);
             }
         });

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class MainActivity extends AppCompatActivity {
+public class AddDelivery extends AppCompatActivity {
 
     private EditText door,address,city,contact;
     private Button save;
@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_addDelivery);
 
         door = findViewById(R.id.door);
         address = findViewById(R.id.address);
@@ -28,19 +28,10 @@ public class MainActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String data1 = door.getText().toString();
-                String data2 = address.getText().toString();
-                String data3 = city.getText().toString();
-                String data4 = contact.getText().toString();
-
-                Intent intent = new Intent(MainActivity.this,DeliveryData.class);
-                intent.putExtra("door",0);
-
+                Intent intent = new Intent(AddDelivery.this,DeliveryData.class);
                 startActivity(intent);
             }
         });
     }
-
 
 }

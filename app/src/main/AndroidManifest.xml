@@ -13,7 +13,7 @@
         <activity android:name=".Preparing" />
         <activity android:name=".OrderConfirmed" />
         <activity android:name=".DeliveryData" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".AddDelivery">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
