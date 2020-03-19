@@ -17,7 +17,7 @@ public class AddDelivery extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addDelivery);
+        setContentView(R.layout.activity_main);
 
         door = findViewById(R.id.door);
         address = findViewById(R.id.address);
