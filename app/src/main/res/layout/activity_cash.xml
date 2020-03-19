@@ -26,7 +26,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="100dp"
-        android:text="Pay for orders with cash"
+        android:text="Pay for orders with cash."
         android:textColor="#CE000000"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
