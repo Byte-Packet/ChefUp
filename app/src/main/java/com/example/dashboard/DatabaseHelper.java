@@ -1,4 +1,4 @@
 package com.example.dashboard;
 
-public class DatabaseHelper {
+public class DatabaseHelper  {
 }

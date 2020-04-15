@@ -8,13 +8,13 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:paddingVertical="10dp"
+        android:gravity="center"
         android:text="Edit card"
         android:textColor="@android:color/background_dark"
+        android:background="@drawable/box"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -140,7 +140,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="25dp"
-        android:background="@android:color/darker_gray"
+        android:background="@drawable/box"
         android:text="Save"
         android:textColor="@android:color/white"
         android:textSize="18sp"
