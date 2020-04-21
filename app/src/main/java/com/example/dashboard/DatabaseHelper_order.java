@@ -28,6 +28,7 @@ public class DatabaseHelper_order extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table "+ TABLE_NAME +" (Order_ID INTEGER PRIMARY KEY AUTOINCREMENT,  Dish_name TEXT, total_cost INTEGER )");
+
     }
 
     @Override
