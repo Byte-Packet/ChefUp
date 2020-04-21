@@ -1,5 +1,6 @@
 package com.example.dashboard;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Visa_card extends AppCompatActivity {
@@ -55,13 +57,29 @@ public class Visa_card extends AppCompatActivity {
 
                     @Override
                     public void onClick(View v) {
-                        Integer deletedRows = myDb.deleteData(id.getText().toString());
-                        if(deletedRows >0){
-                            startActivity(idel);
-                            Toast.makeText(Visa_card.this, "Data Deleted", Toast.LENGTH_LONG).show();
-                        }
-                        else
-                            Toast.makeText(Visa_card.this,"Data not Deleted",Toast.LENGTH_LONG).show();
+                        AlertDialog.Builder builder = new AlertDialog.Builder(Visa_card.this);
+                        builder.setTitle("Confirm to Delete Card !");
+                        builder.setMessage("Do you want to Delete this Card details");
+                        builder.setCancelable(false);
+                        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Integer deletedRows = myDb.deleteData(id.getText().toString());
+                                if(deletedRows >0){
+                                    startActivity(idel);
+                                    Toast.makeText(Visa_card.this, "Data Deleted", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+
+                        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(Visa_card.this,"Data not Deleted",Toast.LENGTH_LONG).show();
+                            }
+                        });
+
+                        builder.show();
 
                     }
                 }
