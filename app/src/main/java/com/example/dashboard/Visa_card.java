@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Visa_card extends AppCompatActivity {
     DatabaseHelper_pay myDb;
-    TextView cn,ed;
+    TextView cn,ed,n;
 
     Intent i5;
     @Override
@@ -22,12 +22,14 @@ public class Visa_card extends AppCompatActivity {
         myDb = new DatabaseHelper_pay(this);
         cn=(TextView)findViewById(R.id.textView12);
         ed=(TextView)findViewById(R.id.textView14);
+        n=(TextView)findViewById(R.id.textViewne);
 
         Cursor res =myDb.getAllData();
         while(res.moveToNext()) {
 
             cn.setText(res.getString(2));
             ed.setText(res.getString(3));
+            n.setText(res.getString(1));
 
 
         }
