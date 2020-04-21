@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class pay_main extends AppCompatActivity {
     DatabaseHelper_pay myDb;
     TextView cn;
+    ImageView ivis;
     Intent intent,intent2,intent3;
 
     @Override
@@ -26,6 +28,7 @@ public class pay_main extends AppCompatActivity {
         Cursor res =myDb.getAllData();
 
         cn=(TextView)findViewById(R.id.textView9);
+        ivis=(ImageView)findViewById(R.id.imageView3);
 
         while(res.moveToNext()) {
 
