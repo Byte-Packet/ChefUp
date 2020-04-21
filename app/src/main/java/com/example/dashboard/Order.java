@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Order extends AppCompatActivity {
 
-    DatabaseHelper_order myDb;
+    //DatabaseHelper_order myDb;
     private Button button1;
 
     TextView textView1;
@@ -25,7 +25,7 @@ public class Order extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
-        myDb=new DatabaseHelper_order(this);
+       // myDb=new DatabaseHelper_order(this);
 
         textView1=(TextView) findViewById(R.id.dishname);
 
@@ -52,21 +52,5 @@ public class Order extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void AddData(){
 
-        button2.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                       boolean isInserted=myDb.insertData(textView4.getText().toString(),
-                                textView6.getText().toString());
-
-                        if (isInserted==true)
-                            Toast.makeText(Order.this,"Data inserted",Toast.LENGTH_LONG).show();
-                        else
-                            Toast.makeText(Order.this,"Data insertion failed",Toast.LENGTH_LONG).show();
-                    }
-                }
-        );
-    }
 }

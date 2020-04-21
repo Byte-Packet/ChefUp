@@ -11,11 +11,7 @@
 <style name="recipeTitle">
     <item name="android:textSize">25dp</item>
 </style>
-<style name="hover">
-    <item name="android:background">
 
-    </item>
-</style>
     <style name="btn_size" parent="@android:style/Widget.EditText">
         <item name="android:layout_marginBottom" >50dp</item>
         <item name = "android:width">50dp</item>
