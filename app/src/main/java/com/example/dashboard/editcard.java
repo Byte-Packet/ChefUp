@@ -41,8 +41,24 @@ public class editcard extends AppCompatActivity {
         btnup = (Button) findViewById(R.id.button2);
 
 
-
+        updateData();
     }
 
+    public void updateData() {
+        btnup.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean isUpdate = myDb.updateData(id.getText().toString(), edname.getText().toString(),
+                                ednumber.getText().toString(), eddate.getText().toString());
+                        if (isUpdate == true) {
 
+                            Toast.makeText(editcard.this, "Data updated", Toast.LENGTH_LONG).show();
+                        } else
+                            Toast.makeText(editcard.this, "Data not updated", Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
+
+    }
 }
