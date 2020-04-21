@@ -131,6 +131,22 @@
         app:layout_constraintStart_toEndOf="@+id/editText7"
         app:layout_constraintTop_toTopOf="@+id/textView20" />
 
+    <TextView
+        android:id="@+id/textViewid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="124dp"
+        android:text="ID"
+        android:textSize="1sp"
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+
+
     <Button
         android:id="@+id/button2"
         android:layout_width="397dp"
