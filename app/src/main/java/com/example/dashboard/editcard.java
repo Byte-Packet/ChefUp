@@ -16,11 +16,14 @@ public class editcard extends AppCompatActivity {
     Button btnup;
     EditText edname, ednumber, eddate;
     TextView id;
+    Intent in;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editcard);
+
+        in=new Intent(this,pay_main.class);
 
         edname = (EditText) findViewById(R.id.editText);
         ednumber = (EditText) findViewById(R.id.editText2);
@@ -52,7 +55,7 @@ public class editcard extends AppCompatActivity {
                         boolean isUpdate = myDb.updateData(id.getText().toString(), edname.getText().toString(),
                                 ednumber.getText().toString(), eddate.getText().toString());
                         if (isUpdate == true) {
-
+                            startActivity(in);
                             Toast.makeText(editcard.this, "Data updated", Toast.LENGTH_LONG).show();
                         } else
                             Toast.makeText(editcard.this, "Data not updated", Toast.LENGTH_LONG).show();
