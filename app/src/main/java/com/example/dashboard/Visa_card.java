@@ -15,6 +15,7 @@ public class Visa_card extends AppCompatActivity {
     TextView cn,ed,n;
     TextView id;
     ImageView iv;
+    Intent idel;
 
     Intent i5;
     @Override
@@ -22,6 +23,7 @@ public class Visa_card extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visa_card);
 
+        idel=new Intent(this,pay_main.class);
         i5=new Intent(this,editcard.class);
         myDb = new DatabaseHelper_pay(this);
         cn=(TextView)findViewById(R.id.textView12);
@@ -55,7 +57,7 @@ public class Visa_card extends AppCompatActivity {
                     public void onClick(View v) {
                         Integer deletedRows = myDb.deleteData(id.getText().toString());
                         if(deletedRows >0){
-
+                            startActivity(idel);
                             Toast.makeText(Visa_card.this, "Data Deleted", Toast.LENGTH_LONG).show();
                         }
                         else
