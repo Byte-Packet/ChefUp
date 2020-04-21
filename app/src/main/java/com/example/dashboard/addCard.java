@@ -25,6 +25,55 @@ public class addCard extends AppCompatActivity {
         setContentView(R.layout.activity_add_card);
         myDb = new DatabaseHelper_pay(this);
 
-      
+        final CardForm cardForm = (CardForm) findViewById(R.id.cardform);
+
+        editName=(EditText)findViewById(R.id.card_name);
+        editCardNo=(EditText)findViewById(R.id.card_number);
+        editEdate=(EditText)findViewById(R.id.expiry_date);
+        editCvv=(EditText)findViewById(R.id.cvc);
+        btnAdd=(Button)findViewById(R.id.btn_pay);
+        AddData();
+
+        TextView txtdes=(TextView)findViewById(R.id.payment_amount);
+        //  final TextView num=(TextView)findViewById(R.id.card_number);
+        TextView txtdes2=(TextView)findViewById(R.id.payment_amount_holder);
+
+
+        txtdes.setText(null);
+        txtdes2.setText(null);
+
+        btnAdd.setText(String.format("Add Card"));
+
+   /*     btnAdd.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                 if (cardForm != null) {
+
+
+                    alertBuilder =new AlertDialog.Builder(addCard.this);
+                    alertBuilder.setTitle("Confirm before Add");
+                    alertBuilder.setMessage("card number"+ num);
+
+                }
+            }
+        });    */
+    }
+    public void AddData(){
+        btnAdd.setOnClickListener(
+                new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+                        boolean isInserted = myDb.insertData(editName.getText().toString(),
+                                editCardNo.getText().toString(),editEdate.getText().toString(),
+                                editCvv.getText().toString());
+                        if(isInserted =true)
+                            Toast.makeText(addCard.this,"Data inserted",Toast.LENGTH_LONG).show();
+                        else
+                            Toast.makeText(addCard.this,"Data not inserted",Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
     }
 }
