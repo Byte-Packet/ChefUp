@@ -33,6 +33,8 @@ public class pay_main extends AppCompatActivity {
         while(res.moveToNext()) {
 
             cn.setText(res.getString(2));
+            ivis.setVisibility(View.VISIBLE);
+            cn.setVisibility(View.VISIBLE);
 
         }
 
