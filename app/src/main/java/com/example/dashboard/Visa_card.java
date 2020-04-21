@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +14,7 @@ public class Visa_card extends AppCompatActivity {
     DatabaseHelper_pay myDb;
     TextView cn,ed,n;
     TextView id;
+    ImageView iv;
 
     Intent i5;
     @Override
@@ -25,6 +28,7 @@ public class Visa_card extends AppCompatActivity {
         ed=(TextView)findViewById(R.id.textView14);
         n=(TextView)findViewById(R.id.textViewne);
         id=(TextView)findViewById(R.id.textViewne1);
+        iv=(ImageView)findViewById(R.id.imageView5);
 
         Cursor res =myDb.getAllData();
         while(res.moveToNext()) {
@@ -41,5 +45,24 @@ public class Visa_card extends AppCompatActivity {
     public void edit(View view) {
 
         startActivity(i5);
+    }
+
+    public void DeleteData(){
+        iv.setOnClickListener(
+                new View.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+                        Integer deletedRows = myDb.deleteData(id.getText().toString());
+                        if(deletedRows >0){
+
+                            Toast.makeText(Visa_card.this, "Data Deleted", Toast.LENGTH_LONG).show();
+                        }
+                        else
+                            Toast.makeText(Visa_card.this,"Data not Deleted",Toast.LENGTH_LONG).show();
+
+                    }
+                }
+        );
     }
 }
