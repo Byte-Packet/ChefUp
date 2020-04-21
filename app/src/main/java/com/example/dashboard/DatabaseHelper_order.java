@@ -1,5 +1,6 @@
 package com.example.dashboard;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -19,7 +20,7 @@ public class DatabaseHelper_order extends SQLiteOpenHelper {
 
     public DatabaseHelper_order(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
-        SQLiteDatabase db=this.getWritableDatabase();
+
 
     }
 
@@ -33,5 +34,18 @@ public class DatabaseHelper_order extends SQLiteOpenHelper {
 
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(db);
+    }
+    public boolean insertData(String dishName, String total){
+        SQLiteDatabase db=this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(COL_2,dishName);
+        contentValues.put(COL_3,total);
+
+        Long result=db.insert(TABLE_NAME,null,contentValues);
+        if(result==-1)
+            return false;
+        else
+            return true;
+
     }
 }

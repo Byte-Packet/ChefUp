@@ -39,7 +39,7 @@
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="180dp"
         android:background="@drawable/layout_bottom"
         android:orientation="horizontal">
 
@@ -54,6 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+
             >
 
             <LinearLayout
@@ -65,12 +66,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dish name"
+                    android:text="Dish name : "
 
                     android:textSize="18dp"
                     />
-                <EditText
-                    android:layout_width="80dp"
+                <TextView
+                    android:id="@+id/dishname"
+                    android:layout_width="190dp"
                     android:layout_height="wrap_content"
 
                     />
@@ -88,7 +90,8 @@
                 android:text="Quantity"
                 android:textSize="18dp"
                 />
-                <EditText
+                <TextView
+                    android:id="@+id/quantity"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
 
@@ -107,30 +110,35 @@
                 android:text="Price"
                 android:textSize="18dp"
                 />
-            <EditText
+            <TextView
+                android:text="Rs.500.00"
+                android:id="@+id/price"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
 
                 />
         </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+            <Button
+                android:padding="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:background="@drawable/bg_button"
+                android:text="delete"
+                android:layout_gravity="center"
+                />
         </LinearLayout>
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"/>
-        <Button
-            android:layout_marginRight="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:background="@drawable/bg_button"
-            android:text="delete"
-            android:layout_gravity="center"
-            />
+
 
     </LinearLayout>
     <Button
+        android:id="@+id/confirmOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
