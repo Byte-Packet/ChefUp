@@ -20,29 +20,29 @@ public class reviewTab extends Fragment {
     EditText reviewer;
     EditText review;
     Button submit;
-
+    DatabaseHelper myDB;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_review_tab, container, false);
 
-       View view = inflater.inflate(R.layout.fragment_review_tab, container, false);
-       reviewer = view.findViewById(R.id.review_Name);
-       review = view.findViewById(R.id.review);
-        submit =  view.findViewById(R.id.submittt);
-
-        /*submit.setOnClickListener(new View.OnClickListener() {
+        View view = inflater.inflate(R.layout.fragment_review_tab, container, false);
+        reviewer = view.findViewById(R.id.review_Name);
+        review = view.findViewById(R.id.review);
+        submit = view.findViewById(R.id.submittt);
+        myDB = new DatabaseHelper(getContext());
+        submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //boolean isInsert = myDB.insertReview(reviewer.getText().toString(),review.getText().toString());
-                //if(isInsert =true){
+                boolean isInsert = myDB.insertReview(reviewer.getText().toString(),review.getText().toString());
+                if(isInsert =true){
                     Toast.makeText(getContext(),"Inserted", Toast.LENGTH_LONG).show();
-                //}else{
-                  //  Toast.makeText(getContext(),"Error", Toast.LENGTH_LONG).show();
-                //}
+                }else{
+                    Toast.makeText(getContext(),"Error", Toast.LENGTH_LONG).show();
+                }
             }
-        });*/
+        });
         return view;
     }
 
