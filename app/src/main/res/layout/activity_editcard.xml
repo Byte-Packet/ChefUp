@@ -8,13 +8,13 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:paddingVertical="10dp"
+        android:gravity="center"
         android:text="Edit card"
         android:textColor="@android:color/background_dark"
+        android:background="@drawable/box"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -131,6 +131,22 @@
         app:layout_constraintStart_toEndOf="@+id/editText7"
         app:layout_constraintTop_toTopOf="@+id/textView20" />
 
+    <TextView
+        android:id="@+id/textViewid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="124dp"
+        android:text="ID"
+        android:textSize="1sp"
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+
+
     <Button
         android:id="@+id/button2"
         android:layout_width="397dp"
@@ -140,7 +156,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="25dp"
-        android:background="@android:color/darker_gray"
+        android:background="@drawable/box"
         android:text="Save"
         android:textColor="@android:color/white"
         android:textSize="18sp"
