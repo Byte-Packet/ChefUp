@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -16,12 +16,7 @@
         <item name="android:background">
         </item>
     </style>
-<<<<<<< Updated upstream
-<style name="recipeTitle">
-    <item name="android:textSize">25dp</item>
-</style>
-=======
->>>>>>> Stashed changes
+
 
     <style name="btn_size" parent="@android:style/Widget.EditText">
         <item name="android:layout_marginBottom">50dp</item>
