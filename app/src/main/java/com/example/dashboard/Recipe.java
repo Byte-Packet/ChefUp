@@ -10,13 +10,18 @@ import android.widget.TextView;
 
 public class Recipe extends AppCompatActivity {
 
+<<<<<<< Updated upstream
     private Button add_order;
     TextView textView;
+=======
+    //DatabaseHelper_reviews recDB;
+>>>>>>> Stashed changes
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
+<<<<<<< Updated upstream
 
         textView=(TextView) findViewById(R.id.textView2);
         add_order = (Button)findViewById(R.id.addorder);
@@ -33,5 +38,8 @@ public class Recipe extends AppCompatActivity {
             }
         });
 
+=======
+        //recDB = new DatabaseHelper_reviews(this);
+>>>>>>> Stashed changes
     }
 }

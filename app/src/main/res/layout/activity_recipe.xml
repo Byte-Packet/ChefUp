@@ -39,30 +39,6 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n\n1 Chicken
-                                \n 1/2 cups yogurt
-                                \n1 tbsp paprika
-                                \n4 garlic cloves crushed
-                                \n1/8 tsp chili peppers
-                                \n1 tsp Salt
-                                \n1/2 tsp cumin ground
-                                \n1/4 tsp cinnamon
-                                \n1/8 tsp ground cloves
-                                \n1 cup ghee
-                                \n\n
-                                \nVotes:3
-                                \n\nRating:4.33
-
-                                \n\nINSTRUCTIONS
-                                \n\nCut the chicken into pieces and trim all the fat.
-                                \nWash the chicken and dry completely.
-                                \nMix all the other ingredients together well.
-                                \nPut the chicken in this mixture, ensuring that it is completely coated.
-                                \nAllow the chicken to marinade in this mixture overnight (place it in a fridge).
-                                \nBarbecue the chicken over an outdoor fire for 20 - 30 minutes.
-                                \nBrush the pieces occasionally with ghee and turn them over so they roast evenly.
-                                \nOnce the chicken skin begins to blacken, take it off the barbecue and serve with lemon wedges and chutney!"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
                 </LinearLayout>
