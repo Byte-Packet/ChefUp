@@ -20,10 +20,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + REVIEWTAB + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, REVIEW TEXT)");
+        db.execSQL("create table " + REVIEWTAB + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, REVIEW TEXT)");
     }
     public void recipe(SQLiteDatabase db){
-        db.execSQL("create table " + REVIEWTAB + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, REVIEW TEXT)");
+        db.execSQL("create table " + REVIEWTAB + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, REVIEW TEXT)");
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
