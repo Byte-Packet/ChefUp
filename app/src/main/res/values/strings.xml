@@ -16,4 +16,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="fragment_recipe">This is the Recipe Page</string>
     <string name="fragment_review">This is the Review Page</string>
+
+    <string name="addreview">ADD REVIEW</string>
 </resources>

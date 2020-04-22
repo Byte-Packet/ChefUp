@@ -20,7 +20,6 @@ public class DatabaseHelper_reviews extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, 1);
         SQLiteDatabase db = this.getWritableDatabase();
     }
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_NAME + " (ID PRIMARY KEY AUTOINCREMENT, NAME TEXT, REVIEW TEXT, STARS INT)");

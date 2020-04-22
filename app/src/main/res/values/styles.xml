@@ -13,8 +13,7 @@
     </style>
 
     <style name="hover">
-        <item name="android:background">
-        </item>
+        <item name="android:background">@color/blue</item>
     </style>
 
 
