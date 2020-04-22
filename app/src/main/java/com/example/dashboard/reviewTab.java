@@ -27,10 +27,10 @@ public class reviewTab extends Fragment {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_review_tab, container, false);
 
-        View view = inflater.inflate(R.layout.fragment_review_tab, container, false);
-        reviewer = view.findViewById(R.id.review_Name);
-        review = view.findViewById(R.id.review);
-        submit = (Button) getView().findViewById(R.id.submit);
+       View view = inflater.inflate(R.layout.fragment_review_tab, container, false);
+       reviewer = view.findViewById(R.id.review_Name);
+       review = view.findViewById(R.id.review);
+        submit =  view.findViewById(R.id.submittt);
 
         /*submit.setOnClickListener(new View.OnClickListener() {
             @Override

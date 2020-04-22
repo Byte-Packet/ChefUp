@@ -28,6 +28,7 @@
            android:textAlignment= "center"
            android:hint="Review"/>
        <Button
+           android:id="@+id/submittt"
            android:layout_width="match_parent"
            android:layout_height="50dp"
            android:background="@color/orange"
