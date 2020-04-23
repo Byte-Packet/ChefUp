@@ -1,5 +1,6 @@
 package com.example.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,10 +23,25 @@ public class recipeTab extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recipe_tab, container, false);
+       // return inflater.inflate(R.layout.fragment_recipe_tab, container, false);
+        View view = inflater.inflate(R.layout.fragment_recipe_tab, container, false);
 
+        button1 = view.findViewById(R.id.addToCart);
 
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(getActivity(),Order.class);
+                startActivity(intent);
+
+            }
+        });
+
+        return view;
     }
+
+
 
 
 

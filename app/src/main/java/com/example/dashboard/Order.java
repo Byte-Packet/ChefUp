@@ -33,7 +33,7 @@ public class Order extends AppCompatActivity {
         setContentView(R.layout.activity_order);
 
 
-        textView1=(TextView) findViewById(R.id.dishname);
+        textView1=(TextView) findViewById(R.id.textView2);
 
         textView1.setText(getIntent().getStringExtra("Recipe_name"));
 
