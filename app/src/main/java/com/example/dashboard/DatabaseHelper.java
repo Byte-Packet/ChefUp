@@ -29,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + REVIEWTAB);
-        recipe(db);
+        onCreate(db);
     }
     public boolean insertReview(String name,String review){
         SQLiteDatabase db = this.getWritableDatabase();
