@@ -2,6 +2,7 @@ package com.example.dashboard;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -28,7 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + REVIEWTAB);
-        recipe(db);
+        onCreate(db);
     }
     public boolean insertReview(String name,String review){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -40,5 +41,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         else
             return true;
+    }
+
+    public Cursor displayAllReviews(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ REVIEWTAB, null);
+        return res;
     }
 }

@@ -218,6 +218,12 @@
             android:layout_gravity="bottom"
             android:background="@drawable/navigation">
 
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:menu="@menu/bottom_nav"
+                />
+
 
         </LinearLayout>
     </LinearLayout>

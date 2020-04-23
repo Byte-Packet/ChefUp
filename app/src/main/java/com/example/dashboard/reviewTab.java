@@ -32,17 +32,27 @@ public class reviewTab extends Fragment {
         review = view.findViewById(R.id.review);
         submit = view.findViewById(R.id.submittt);
         myDB = new DatabaseHelper(getContext());
+        myDB.displayAllReviews();
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean isInsert = myDB.insertReview(reviewer.getText().toString(),review.getText().toString());
-                if(isInsert =true){
-                    Toast.makeText(getContext(),"Inserted", Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(getContext(),"Error", Toast.LENGTH_LONG).show();
+                if(reviewer.length()==0){
+                    reviewer.setError("Enter Name");
+                }
+                else if(review.length()==0) {
+                    review.setError("Enter Review");
+                }
+                else {
+                    boolean isInsert = myDB.insertReview(reviewer.getText().toString(), review.getText().toString());
+                    if (isInsert = true) {
+                        Toast.makeText(getContext(), "Inserted", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getContext(), "Error", Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
+
         return view;
     }
 
