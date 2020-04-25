@@ -18,4 +18,15 @@
     <string name="fragment_review">This is the Review Page</string>
 
     <string name="addreview">ADD REVIEW</string>
+
+
+    <!-- String values for payment -->
+    <!-- pay_main -->
+    <string name="Payment_method_cash">Cash</string>
+    <string name="Pay_option_Msg">Payment options</string>
+    <string name="pay_method_msg">Payment method</string>
+    <string name="add_pay_msg">Add payment method</string>
+
+
+
 </resources>

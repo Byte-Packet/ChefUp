@@ -202,10 +202,10 @@
                         <Button
                             android:layout_width="100dp"
                             android:layout_marginTop="10dp"
-
                             android:layout_height="wrap_content"
                             android:background="@drawable/box"
                             android:text="@string/view" />
+
                     </LinearLayout>
                 </LinearLayout>
             </ScrollView>
