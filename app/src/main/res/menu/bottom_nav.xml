@@ -6,4 +6,6 @@
         android:icon="@drawable/shopping_cart"/>
     <item android:title="User"
         android:icon="@drawable/user"/>
+    <item android:title="Payment"
+        android:icon="@drawable/payh"/>
 </menu>
