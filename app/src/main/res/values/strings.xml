@@ -33,5 +33,9 @@
 
     <string name="addCard_msg">Credit or debit card</string>
     <string name="addcard_msg2">Add card</string>
+    <string name="Editcard_name">Card name</string>
+    <string name="editcard_num">Card number</string>
+    <string name="editcard_edate">Exp.date</string>
+    <string name="editcard_cvv">CVV</string>
 
 </resources>
