@@ -32,5 +32,6 @@
     <string name="add_pay_msg">Add payment method</string>
 
     <string name="addCard_msg">Credit or debit card</string>
+    <string name="addcard_msg2">Add card</string>
 
 </resources>
