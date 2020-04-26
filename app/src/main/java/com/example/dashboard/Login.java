@@ -22,7 +22,7 @@ public class Login extends AppCompatActivity {
 
         name = (EditText)findViewById(R.id.username);
         password = (EditText)findViewById(R.id.password);
-        submit = (Button)findViewById(R.id.submit);
+        submit = (Button)findViewById(R.id.login);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +35,10 @@ public class Login extends AppCompatActivity {
     public void validate(String name, String password){
         if(name.equals("User")&& password.equals("1234")) {
             Intent intent = new Intent(Login.this, Menu.class);
+            startActivity(intent);
+        }
+        else if(name.equals("Admin")&& password.equals("1234")){
+            Intent intent = new Intent(Login.this,Admin.class);
             startActivity(intent);
         }
         else{

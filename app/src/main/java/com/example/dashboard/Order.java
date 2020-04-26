@@ -35,7 +35,7 @@ public class Order extends AppCompatActivity {
 
         textView1=(TextView) findViewById(R.id.textView2);
 
-        textView1.setText(getIntent().getStringExtra("Recipe_name"));
+        //textView1.setText(getIntent().getStringExtra("Recipe_name"));
 
 
         button1=(Button) findViewById(R.id.button5);

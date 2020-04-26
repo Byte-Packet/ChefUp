@@ -6,65 +6,54 @@
     tools:context="com.example.dashboard.recipeTab">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="450dp">
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="420dp">
+
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="5dp">
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Chicken Tikka Masala"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
-
-                <TextView
-
-                    android:textSize="12dp"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. \n\n1 Chicken
-1/2 cups yogurt\n
-1 tbsp paprika\n
-4 garlic cloves crushed\n
-1/8 tsp chili peppers\n
-1 tsp Salt\n
-1/2 tsp cumin ground\n
-1/4 tsp cinnamon\n
-1/8 tsp ground cloves\n
-1 cup ghee\n
-\n
-Votes:3\n
-\n
-INSTRUCTIONS\n
-Cut the chicken into pieces and trim all the fat.\n
-Wash the chicken and dry completely.\n
-Mix all the other ingredients together well.\n
-Put the chicken in this mixture, ensuring that it is completely coated.\n
-Allow the chicken to marinade in this mixture overnight (place it in a fridge).\n
-Barbecue the chicken over an outdoor fire for 20 - 30 minutes.\n
-Brush the pieces occasionally with ghee and turn them over so they roast evenly.\n
-Once the chicken skin begins to blacken, take it off the barbecue and serve with lemon wedges and chutney!\n"/>
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-            </LinearLayout>
-        </ScrollView>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Chicken Tikka Masala"
+                            android:textSize="25dp"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="@string/randomText"/>
 
-        <Button
-            android:id="@+id/addToCart"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:background="@drawable/box"
-            android:text="ADD TO CART" />
+                        <Button
+                            android:id="@+id/addToCart"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/box"
+                            android:text="ADD TO CART" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+
+
     </LinearLayout>
-
-
 </FrameLayout>
