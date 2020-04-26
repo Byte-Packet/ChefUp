@@ -1,7 +1,9 @@
 package com.example.dashboard;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuView;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -14,14 +16,14 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
+import android.widget.TextView;
 
 public class Menu extends AppCompatActivity {
 
     private Button show;
     ArrayList<Product> menulist = null;
 
-    Button view;
+    Button view_recipe;
     ListView menu;
     DatabaseHelper myDB;
     ProductAdapterList adapter;
@@ -41,6 +43,17 @@ public class Menu extends AppCompatActivity {
         adapter = new ProductAdapterList(menulist, this);
         menu.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+
+        view_recipe = (Button)findViewById(R.id.viewRecipe);
+
+
+        view_recipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Menu.this, Recipe.class);
+                startActivity(intent);
+            }
+        });
     }
 }
 
