@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 public class pay_main extends AppCompatActivity {
     DatabaseHelper_pay myDb;
-    TextView cn;
-    ImageView ivis;
+    TextView cn,cn2;
+    ImageView ivis,tick,tick2;
     Intent intent,intent2,intent3;
 
     @Override
@@ -28,7 +28,10 @@ public class pay_main extends AppCompatActivity {
         Cursor res =myDb.getAllData();
 
         cn=(TextView)findViewById(R.id.textView9);
+        cn2=(TextView)findViewById(R.id.textView29);
         ivis=(ImageView)findViewById(R.id.imageView3);
+        tick=(ImageView)findViewById(R.id.imageView2);
+        tick2=(ImageView)findViewById(R.id.imageViewn2);
 
         while(res.moveToNext()) {
 
@@ -41,15 +44,19 @@ public class pay_main extends AppCompatActivity {
     }
 
     public void cash_payemnt(View view) {
+        tick.setVisibility(View.VISIBLE);
+        tick2.setVisibility(View.INVISIBLE);
         startActivity(intent);
     }
 
     public void add(View view) {
+
         startActivity(intent2);
     }
 
     public void visacard(View view) {
-
+        tick2.setVisibility(View.VISIBLE);
+        tick.setVisibility(View.INVISIBLE);
         startActivity(intent3);
     }
 }
