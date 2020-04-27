@@ -29,8 +29,6 @@ public class Menu extends AppCompatActivity {
         adapter = new ProductAdapterList(menulist, this);
         menu.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-
-
     }
 
 }

@@ -32,6 +32,9 @@ public class recipeTab extends Fragment {
        // return inflater.inflate(R.layout.fragment_recipe_tab, container, false);
         View view = inflater.inflate(R.layout.fragment_recipe_tab, container, false);
 
+        //Intent intent = intent.getIntent();
+        //Product prod = intent.getParcelableExtra("id");
+
         button1 = view.findViewById(R.id.addToCart);
         recipe = view.findViewById(R.id.tot_recipe);
         recipeName = view.findViewById(R.id.recipeName);
