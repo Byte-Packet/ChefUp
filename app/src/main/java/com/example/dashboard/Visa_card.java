@@ -28,9 +28,9 @@ public class Visa_card extends AppCompatActivity {
         idel=new Intent(this,pay_main.class);
         i5=new Intent(this,editcard.class);
         myDb = new DatabaseHelper_pay(this);
-        cn=(TextView)findViewById(R.id.textView12);
-        ed=(TextView)findViewById(R.id.textView14);
-        n=(TextView)findViewById(R.id.textViewne);
+        cn=(TextView)findViewById(R.id.textView14);
+        ed=(TextView)findViewById(R.id.textViewne);
+        n=(TextView)findViewById(R.id.textView12);
         id=(TextView)findViewById(R.id.textViewne1);
         iv=(ImageView)findViewById(R.id.imageView5);
 
