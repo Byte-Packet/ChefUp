@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Order"
+    android:orientation="vertical">
+
+
+
+
+
+
+
+    <LinearLayout
+
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/layout_bottom"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/img__4_"
+            />
+        <LinearLayout
+            android:paddingLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dish name : "
+
+                    android:textSize="18dp"
+                    />
+                <EditText
+                    android:id="@+id/dishName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Dish name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+                <TextView
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quantity"
+                    android:textSize="18dp"
+                    />
+                <EditText
+                    android:id="@+id/quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Quantity"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dishName" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+                <TextView
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price"
+                    android:textSize="18dp"
+                    />
+                <EditText
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/quantity" />
+            </LinearLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/addOrderDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Add order"
+        android:layout_gravity="center"
+        android:background="@color/orange"
+        android:padding="10dp"
+        />
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Add your profile"
+        android:layout_marginTop="25dp"
+        android:background="@color/orange"
+        android:padding="10dp"
+
+        />
+
+</LinearLayout>
