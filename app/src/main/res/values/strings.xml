@@ -31,4 +31,11 @@
     <string name="pay_method_msg">Payment method</string>
     <string name="add_pay_msg">Add payment method</string>
 
+    <string name="addCard_msg">Credit or debit card</string>
+    <string name="addcard_msg2">Add card</string>
+    <string name="Editcard_name">Card name</string>
+    <string name="editcard_num">Card number</string>
+    <string name="editcard_edate">Exp.date</string>
+    <string name="editcard_cvv">CVV</string>
+
 </resources>
