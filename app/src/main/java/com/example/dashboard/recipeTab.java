@@ -6,13 +6,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+
+import org.w3c.dom.Text;
 
 
 public class recipeTab extends Fragment {
 
    private Button button1;
+   TextView recipe;
+   TextView recipeName;
+   Product prod;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +33,10 @@ public class recipeTab extends Fragment {
         View view = inflater.inflate(R.layout.fragment_recipe_tab, container, false);
 
         button1 = view.findViewById(R.id.addToCart);
+        recipe = view.findViewById(R.id.tot_recipe);
+        recipeName = view.findViewById(R.id.recipeName);
+
+
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
