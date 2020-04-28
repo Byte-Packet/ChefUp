@@ -32,7 +32,7 @@ public class recipeTab extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(getActivity(),Order.class);
+                Intent intent=new Intent(getActivity(),AddOrder.class);
                 startActivity(intent);
 
             }

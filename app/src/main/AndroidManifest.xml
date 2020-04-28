@@ -26,9 +26,15 @@
         <activity
             android:name=".Menu"
             android:parentActivityName=".Login" />
-        <activity android:name=".EditUserProfile" />
+        <activity android:name=".Order"/>
+        <activity android:name=".AddOrder"
+            android:parentActivityName=".Order"/>
+        <activity android:name=".Update_Order"/>
+        <activity android:name=".EditUserProfile"
+            android:parentActivityName=".AddOrder"/>
         <activity android:name=".UserProfile" />
-        <activity android:name=".Order" />
+
+
         <activity android:name=".Login"
             android:parentActivityName=".MainActivity">
 

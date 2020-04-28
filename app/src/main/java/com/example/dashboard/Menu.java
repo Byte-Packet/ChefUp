@@ -47,13 +47,13 @@ public class Menu extends AppCompatActivity {
         view_recipe = (Button)findViewById(R.id.viewRecipe);
 
 
-        view_recipe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Menu.this, Recipe.class);
-                startActivity(intent);
-            }
-        });
+       // view_recipe.setOnClickListener(new View.OnClickListener() {
+         //   @Override
+           // public void onClick(View v) {
+             //   Intent intent = new Intent(Menu.this, Recipe.class);
+               // startActivity(intent);
+            //}
+        //});
     }
 }
 

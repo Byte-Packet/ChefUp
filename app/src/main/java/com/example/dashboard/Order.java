@@ -58,7 +58,7 @@ public class Order extends AppCompatActivity {
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Order.this));
 
-        openUserProfile();
+
     }
 
     @Override
@@ -104,8 +104,8 @@ public class Order extends AppCompatActivity {
     void confirmDialog(){
 
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setTitle("Delete All order ?");
-        builder.setMessage("Are you sure want to delete ?? ");
+        builder.setTitle("Delete All order ");
+        builder.setMessage("Are you sure want to delete ? ");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -129,8 +129,5 @@ public class Order extends AppCompatActivity {
         builder.create().show();
 
     }
-    public void openUserProfile(){
-        Intent intent=new Intent(this,EditUserProfile.class);
-        startActivity(intent);
-    }
+
 }
