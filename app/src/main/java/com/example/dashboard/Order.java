@@ -36,8 +36,8 @@ public class Order extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
-        recyclerView=findViewById(R.id.recyclerview);
-        add_button=findViewById(R.id.addOrder);
+        //recyclerView=findViewById(R.id.recyclerview);
+        //add_button=findViewById(R.id.addOrder);
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,10 +95,10 @@ public class Order extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId()==R.id.deleteAll){
+        /*if (item.getItemId()==R.id.deleteAll){
             //Toast.makeText(this,"Delete",Toast.LENGTH_SHORT).show();
             confirmDialog();
-        }
+        }*/
         return super.onOptionsItemSelected(item);
     }
     void confirmDialog(){

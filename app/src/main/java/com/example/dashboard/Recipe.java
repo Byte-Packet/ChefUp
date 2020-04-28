@@ -1,13 +1,25 @@
 package com.example.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.dashboard.main.SectionsPagerAdapter;
 
-public class Recipe extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class Recipe extends AppCompatActivity {
+    ImageView image;
+    Product prod;
+    ArrayList prodList;
+    DatabaseHelper myDB;
+    TextView id;
 
 
     @Override
@@ -20,5 +32,14 @@ public class Recipe extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
 
+        image = (ImageView)findViewById(R.id.pic);
+        myDB = new DatabaseHelper(this);
+        id = (TextView)findViewById(R.id.idview);
+
+        prodList = new ArrayList<>();
+
+        Intent intent=getIntent();
+        String fullname = intent.getStringExtra("id");
+        id.setText(fullname);
     }
 }

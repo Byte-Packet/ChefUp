@@ -8,12 +8,6 @@
     tools:context=".Order"
     android:orientation="vertical">
 
-
-
-
-
-
-
     <LinearLayout
 
         android:layout_marginRight="16dp"

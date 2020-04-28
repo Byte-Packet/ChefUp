@@ -51,18 +51,20 @@ public class ProductAdapterList extends BaseAdapter {
         TextView name = (TextView)convertView.findViewById(R.id.recipeName);
         Button view = (Button)convertView.findViewById(R.id.viewbtn) ;
 
-        Product prod = menu.get(position);
+        final Product prod = menu.get(position);
 
             image.setImageBitmap(prod.getImage());
             name.setText(prod.getName());
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     Intent intent = new Intent(context, Recipe.class);
                     context.startActivity(intent);
+                    final int id = 123456;
+                    intent.putExtra("id",prod);
                 }
             });
-
 
         return convertView;
     }

@@ -41,7 +41,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + REVIEWTAB + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, REVIEW TEXT)");
-        //db.execSQL("create table " + PRODUCTTAB + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, Image BLOB NOT NULL, Recipe TEXT NOT NULL, Cuisine NOT NULL)");
         db.execSQL("create table " + IMAGETAB + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, RECIPE TEXT, CUISINE TEXT, Image BLOB)");
     }
     @Override
@@ -98,16 +97,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Bitmap bt = null;
         while(cursor.moveToNext())
         {
+            int id = cursor.getInt(0);
             String name = cursor.getString(1);
             String recipe = cursor.getString(2);
             String cuisine = cursor.getString(3);
             byte[] img = cursor.getBlob(4);
             bt = BitmapFactory.decodeByteArray(img,0,img.length);
 
-            Product prod = new Product(bt, name, recipe, cuisine);
+            Product prod = new Product(id, bt, name, recipe, cuisine);
             menulist.add(prod);
         }
         return menulist;
+    }
+
+    public Product displayRecipe(Product rec){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        int id = rec.getId();
+        Product prod = null;
+        ArrayList<Product> menulist = new ArrayList<>();
+        String query = "select * from "+ IMAGETAB + " where id = ?";
+        Cursor cursor = db.rawQuery(query,  new String[]{String.valueOf(id)});
+        Bitmap bt = null;
+        while(cursor.moveToNext())
+        {
+            String name = cursor.getString(1);
+            String recipe = cursor.getString(2);
+            String cuisine = cursor.getString(3);
+            byte[] img = cursor.getBlob(4);
+            bt = BitmapFactory.decodeByteArray(img,0,img.length);
+
+            prod = new Product(id, bt, name, recipe, cuisine);
+        }
+        return prod;
     }
 
     public Bitmap getimage(Integer id){
@@ -119,30 +141,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             bt = BitmapFactory.decodeByteArray(img,0,img.length);
         }
         return bt;
-    }
-    public void storeImage(Product prod){
-        try{
-            SQLiteDatabase DB = this.getWritableDatabase();
-            Bitmap image = prod.getImage();
-
-            byteArray = new ByteArrayOutputStream();
-            image.compress(Bitmap.CompressFormat.JPEG, 100, byteArray);
-            byte[] imgbyte;
-            imgbyte = byteArray.toByteArray();
-            ContentValues contentValues = new ContentValues();
-            contentValues.put("NAME",prod.getName());
-            contentValues.put("RECIPE",prod.getRecipe());
-            contentValues.put("Image",imgbyte);
-            contentValues.put("CUISINE", prod.getCuisine());
-
-            long check = DB.insert(IMAGETAB, null,contentValues);
-            if(check == 0)
-                Toast.makeText(context, "Success", Toast.LENGTH_LONG).show();
-            else
-                Toast.makeText(context, "Failure", Toast.LENGTH_LONG).show();
-        }
-        catch (Exception e){
-            Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
     }
 }
