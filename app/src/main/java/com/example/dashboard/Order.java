@@ -1,121 +1,136 @@
 package com.example.dashboard;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
 
 public class Order extends AppCompatActivity {
 
+    RecyclerView recyclerView;
+    FloatingActionButton add_button;
 
-    DatabaseHelper_Order myDb;
+    DatabaseHelper_order myDb;
 
-    private Button button1;
+    ArrayList<String> order_id,dish_name,quantity,price;
 
-    TextView textView1;
-    TextView textView2;
-    TextView textView3;
-    TextView textView4,textView5,textView6;
-
-    Button button2;
-
-    Button button3;
-
+    CustomAdapter customAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
-
-        myDb = new DatabaseHelper_Order(this);
-
-
-
-        textView1=(TextView) findViewById(R.id.dishname);
-
-        textView1.setText(getIntent().getStringExtra("Recipe_name"));
-
-
-        button1=(Button) findViewById(R.id.button5);
-        button1.setOnClickListener(new View.OnClickListener() {
+        //recyclerView=findViewById(R.id.recyclerview);
+        //add_button=findViewById(R.id.addOrder);
+        add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openUserProfile();
+
+                Intent intent=new Intent(Order.this,AddOrder.class);
+                startActivity(intent);
             }
         });
 
-        textView4=(TextView) findViewById(R.id.dishname);
-        textView5=(TextView) findViewById(R.id.quantity);
-        textView6=(TextView) findViewById(R.id.price);
-        button2=(Button) findViewById(R.id.confirmOrder);
-        button3=(Button) findViewById(R.id.viewOrder);
-         AddData();
-        viewAll();
+        myDb=new DatabaseHelper_order(Order.this);
+        order_id=new ArrayList<>();
+        dish_name=new ArrayList<>();
+        quantity=new ArrayList<>();
+        price=new ArrayList<>();
 
+        storeDataInArrays();
+        customAdapter=new CustomAdapter(Order.this,Order.this,order_id,dish_name,quantity,price);
+        recyclerView.setAdapter(customAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(Order.this));
+
+        openUserProfile();
     }
 
-    public void AddData(){
-        button2.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        boolean inserted=myDb.insertData(textView4.getText().toString(),textView6.getText().toString());
-
-                        if (inserted= true)
-                        {
-                            Toast.makeText(Order.this,"Data Inserted",Toast.LENGTH_LONG).show();
-                        }
-                        else
-                            Toast.makeText(Order.this,"Data not inserted",Toast.LENGTH_LONG).show();
-
-                    }
-                }
-        );
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode== 1){
+            recreate();
+        }
     }
-    public void viewAll(){
 
-        button3.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Cursor res=myDb.getAllData();
+    void storeDataInArrays(){
 
-                        if (res.getCount()==0) {
+        Cursor cursor=myDb.readAllData();
+        if (cursor.getCount()==0){
 
-                            showMessage("ERROR","No Data Found");
-                            return;
-                        }
-                        StringBuffer buffer=new StringBuffer();
-                        while (res.moveToNext()){
+            Toast.makeText(this,"No data",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            while (cursor.moveToNext()){
 
-                            buffer.append("ID :"+res.getString(0)+"\n");
-                            buffer.append("dish name :"+res.getString(1)+"\n");
-                            buffer.append("total :"+res.getString(2)+"\n\n");
-                        }
-                        showMessage("Data",buffer.toString());
-
-                    }
-                }
-        );
+                order_id.add(cursor.getString(0));
+                dish_name.add(cursor.getString(1));
+                quantity.add(cursor.getString(2));
+                price.add(cursor.getString(3));
+            }
+        }
     }
-    public void showMessage(String title, String message){
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.my_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        /*if (item.getItemId()==R.id.deleteAll){
+            //Toast.makeText(this,"Delete",Toast.LENGTH_SHORT).show();
+            confirmDialog();
+        }*/
+        return super.onOptionsItemSelected(item);
+    }
+    void confirmDialog(){
 
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
+        builder.setTitle("Delete All order ?");
+        builder.setMessage("Are you sure want to delete ?? ");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                DatabaseHelper_order myDB=new  DatabaseHelper_order(Order.this);
+
+                myDb.deleteAllData();
+                //Refresh app
+                Intent intent=new Intent(Order.this,Order.class);
+                startActivity(intent);
+                finish();
+
+
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.create().show();
+
     }
     public void openUserProfile(){
-        Intent intent=new Intent(this,UserProfile.class);
+        Intent intent=new Intent(this,EditUserProfile.class);
         startActivity(intent);
     }
-
-
 }

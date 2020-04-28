@@ -7,6 +7,7 @@
     tools:context=".Menu">
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
@@ -14,7 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        //Contains Navigation Bar
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,199 +26,40 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/logo"
                 android:layout_margin="2dp"
-                android:padding="3dp"/>
+                android:background="@drawable/logo"
+                android:padding="3dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Chef Up"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_marginHorizontal="20dp"
                 android:gravity="center_vertical"
-                android:layout_marginHorizontal="20dp"/>
+                android:text="Chef Up"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="633dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:id="@+id/imageView2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="180dp"
-                            android:background="@drawable/masala" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Masala Dosa"
-                            android:textAppearance="@style/recipeTitle"/>
-
-                        <Button
-                            android:layout_width="100dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box"
-                            android:text="@string/view" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:id="@+id/imageView3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="180dp"
-
-                            android:background="@drawable/momos"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Momos"
-                            android:textAppearance="@style/recipeTitle"/>
-                        <Button
-                            android:layout_width="100dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box"
-                            android:text="@string/view" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:id="@+id/imageView4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="180dp"
-
-                            android:background="@drawable/spagetti" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Spagetti and Meatballs"
-                            android:textAppearance="@style/recipeTitle"/>
-                        <Button
-                            android:layout_width="100dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box"
-                            android:text="@string/view" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:id="@+id/imageView5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="180dp"
-
-                            android:background="@drawable/background_login" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Masala Dosa"
-                            android:textAppearance="@style/recipeTitle"/>
-
-                        <Button
-                            android:layout_width="100dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box"
-                            android:text="@string/view" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:id="@+id/imageView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="180dp"
-                            android:background="@drawable/chicken" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Chicken Tikka Masala"
-                            android:textAppearance="@style/recipeTitle"/>
-
-                        <Button
-                            android:layout_width="100dp"
-                            android:layout_marginTop="10dp"
-                            android:id="@+id/viewRecipe"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box"
-                            android:text="@string/view" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:id="@+id/imageView7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="180dp"
-                            android:background="@drawable/background_login" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Masala Dosa"
-                            android:textAppearance="@style/recipeTitle"/>
-
-                        <Button
-                            android:layout_width="100dp"
-                            android:layout_marginTop="10dp"
-
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/box"
-                            android:text="@string/view" />
-                    </LinearLayout>
-                </LinearLayout>
-            </ScrollView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom"
-            android:background="@drawable/navigation">
-
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/menu"/>
 
         </LinearLayout>
+
+
     </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/navigation"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:menu="@menu/bottom_nav" />
 </androidx.constraintlayout.widget.ConstraintLayout>

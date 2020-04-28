@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="Payment options"
+        android:text="@string/Pay_option_Msg"
         android:textColor="@android:color/black"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="100dp"
-        android:text="Payment method"
+        android:text="@string/Pay_option_Msg"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -49,7 +49,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:onClick="cash_payemnt"
-        android:text="Cash"
+        android:text="@string/Payment_method_cash"
         android:textColor="@android:color/widget_edittext_dark"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -63,18 +63,19 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="18dp"
         android:onClick="add"
-        android:text="Add payment method"
-        android:textColor="@color/black"
+        android:text="@string/add_pay_msg"
+        android:textColor="@android:color/holo_green_dark"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView23" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="8dp"
-        android:layout_height="0dp"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
         android:layout_marginTop="140dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.968"
@@ -104,7 +105,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:visibility="invisible"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:srcCompat="@drawable/vis" />
@@ -117,11 +118,38 @@
         android:layout_marginLeft="17dp"
         android:layout_marginBottom="1dp"
         android:onClick="visacard"
-        android:visibility="invisible"
         android:text="**** 4886"
+        android:visibility="gone"
         android:textColor="@android:color/widget_edittext_dark"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintStart_toEndOf="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/vis" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginBottom="1dp"
+        android:onClick="visacard"
+        android:text="**** 4886"
+        android:visibility="gone"
+        android:textColor="@android:color/widget_edittext_dark"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView23"
+        app:layout_constraintStart_toEndOf="@+id/imageView23" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

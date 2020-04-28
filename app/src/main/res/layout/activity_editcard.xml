@@ -24,9 +24,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
-        android:layout_marginLeft="19dp"
         android:layout_marginTop="115dp"
-        android:text="Card name"
+        android:text="@string/Editcard_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,9 +48,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="Card number"
+        android:text="@string/editcard_num"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
@@ -63,7 +61,7 @@
         android:layout_marginLeft="48dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="**** **** **** 4886"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
@@ -84,9 +82,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
-        android:text="Exp.date"
+        android:text="@string/editcard_edate"
         app:layout_constraintEnd_toStartOf="@+id/editText2"
         app:layout_constraintStart_toStartOf="@+id/editText2"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
@@ -97,8 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="136dp"
-        android:layout_marginRight="136dp"
-        android:text="CVV"
+        android:text="@string/editcard_cvv"
         app:layout_constraintEnd_toEndOf="@+id/editText2"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
@@ -112,7 +108,7 @@
         android:layout_marginEnd="36dp"
         android:layout_marginRight="36dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="12/23"
         app:layout_constraintEnd_toStartOf="@+id/editText9"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,7 +122,7 @@
         android:layout_marginEnd="56dp"
         android:layout_marginRight="56dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText7"
         app:layout_constraintTop_toTopOf="@+id/textView20" />

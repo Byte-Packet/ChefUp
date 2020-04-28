@@ -3,38 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
     tools:context="com.example.dashboard.reviewTab">
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_margin="20dp"
-       android:orientation="vertical"
-       >
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/reviews"
+        />
 
-       <EditText
-           android:id="@+id/review_Name"
-           android:layout_width="match_parent"
-           android:layout_height="50dp"
-           android:background="@drawable/textbox"
-           android:layout_marginBottom="20dp"
-           android:hint="Name"/>
-       <EditText
-           android:id="@+id/review"
-           android:layout_width="match_parent"
-           android:layout_height="200dp"
-           android:background="@drawable/textbox"
-           android:layout_marginBottom="20dp"
-           android:textAlignment= "center"
-           android:hint="Review"/>
-       <Button
-           android:layout_width="match_parent"
-           android:layout_height="50dp"
-           android:background="@color/orange"
-           android:layout_margin="10dp"
-           android:id="@+id/submittt"
-           android:text="@string/addreview"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
 
-   </LinearLayout>
+            <EditText
+                android:id="@+id/review_Name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/textbox"
+                android:hint="Name" />
+
+            <EditText
+                android:id="@+id/review"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/textbox"
+                android:hint="Review"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/submittt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/orange"
+                android:text="@string/addreview" />
+    </LinearLayout>
 
 </LinearLayout>
