@@ -39,7 +39,7 @@ public class Recipe extends AppCompatActivity {
         //textView2.setText(getIntent().getStringExtra("Address"));
         prodList = new ArrayList<>();
 
-        id.setText(getIntent().getStringExtra("Name"));
+        id.setText("Thayoli");
         /*textView2.setText(getIntent().getStringExtra("Address"));
         textView3.setText(getIntent().getStringExtra("Email"));*/
 

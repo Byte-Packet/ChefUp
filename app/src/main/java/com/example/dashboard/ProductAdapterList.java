@@ -2,6 +2,7 @@ package com.example.dashboard;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
