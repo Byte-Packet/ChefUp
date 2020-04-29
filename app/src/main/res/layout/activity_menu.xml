@@ -55,5 +55,11 @@
 
     </LinearLayout>
 
-
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/navigation"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:menu="@menu/bottom_nav" />
 </androidx.constraintlayout.widget.ConstraintLayout>
