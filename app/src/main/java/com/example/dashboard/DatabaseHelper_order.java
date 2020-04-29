@@ -12,8 +12,8 @@ import androidx.annotation.Nullable;
 public class DatabaseHelper_order extends SQLiteOpenHelper {
 
     private Context context;
-    private static final String DATABASE_NAME="ChefUp.db";
-    private static final int DATABASE_VERSION=1;
+    private static final String DATABASE_NAME="ChefUp_Order.db";
+    private static final int DATABASE_VERSION=3;
     private static final String TABLE_NAME="Order_Table";
     private static final String COL_ID="Order_id";
     private static final String COL_DISH_NAME="Dishn_ame";
@@ -29,6 +29,7 @@ public class DatabaseHelper_order extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
 
         String querry="CREATE TABLE "+ TABLE_NAME+ " (" +COL_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+ COL_DISH_NAME +" TEXT, "+ COL_QUANTITY +" INTEGER," + COL_PRICE +" INTEGER );";
         db.execSQL(querry);

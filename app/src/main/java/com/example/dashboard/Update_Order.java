@@ -44,8 +44,8 @@ public class Update_Order extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-              //  DatabaseHelper_order myDb=new DatabaseHelper_order(Update_Order.this);
-                //myDb.updateOrder(id, dishName, qty, price);
+               DatabaseHelper_order myDb=new DatabaseHelper_order(Update_Order.this);
+                myDb.updateOrder(id, dishName, qty, price);
 
             }
         });
@@ -87,8 +87,8 @@ public class Update_Order extends AppCompatActivity {
     void confirmDialog(){
 
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setTitle("Delete "+ dishName+ " ?");
-        builder.setMessage("Are you sure want to delete "+dishName);
+        builder.setTitle("Delete this order" );
+        builder.setMessage("Are you sure want to delete "+dishName+ " ?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

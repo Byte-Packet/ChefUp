@@ -36,8 +36,8 @@ public class Order extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
-        //recyclerView=findViewById(R.id.recyclerview);
-        //add_button=findViewById(R.id.addOrder);
+        recyclerView=findViewById(R.id.recyclerview);
+        add_button=findViewById(R.id.addOrder);
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +58,7 @@ public class Order extends AppCompatActivity {
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Order.this));
 
-        openUserProfile();
+
     }
 
     @Override
@@ -95,17 +95,17 @@ public class Order extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        /*if (item.getItemId()==R.id.deleteAll){
+        if (item.getItemId()==R.id.deleteAll){
             //Toast.makeText(this,"Delete",Toast.LENGTH_SHORT).show();
             confirmDialog();
-        }*/
+        }
         return super.onOptionsItemSelected(item);
     }
     void confirmDialog(){
 
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setTitle("Delete All order ?");
-        builder.setMessage("Are you sure want to delete ?? ");
+        builder.setTitle("Delete All order ");
+        builder.setMessage("Are you sure want to delete ? ");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -129,8 +129,5 @@ public class Order extends AppCompatActivity {
         builder.create().show();
 
     }
-    public void openUserProfile(){
-        Intent intent=new Intent(this,EditUserProfile.class);
-        startActivity(intent);
-    }
+
 }

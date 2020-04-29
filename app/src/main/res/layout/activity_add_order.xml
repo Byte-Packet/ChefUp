@@ -129,7 +129,17 @@
         android:padding="10dp"
         />
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/viewCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Your cart"
+        android:layout_gravity="center"
+        android:background="@color/orange"
+        android:padding="10dp"
+        />
+    <Button
+        android:id="@+id/addProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
