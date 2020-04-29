@@ -13,16 +13,16 @@ public class pay_main extends AppCompatActivity {
     DatabaseHelper_pay myDb;
     TextView cn,cn2;
     ImageView ivis,tick,tick2;
-    Intent intent,intent2,intent3;
+    Intent intentp,intentp2,intentp3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay_main);
 
-        intent=new Intent(this,cash.class);
-        intent2=new Intent(this,add_payment_method.class);
-        intent3=new Intent(this,Visa_card.class);
+        intentp=new Intent(this,cash.class);
+        intentp2=new Intent(this,add_payment_method.class);
+        intentp3=new Intent(this,Visa_card.class);
 
         myDb = new DatabaseHelper_pay(this);
         Cursor res =myDb.getAllData();
@@ -46,17 +46,17 @@ public class pay_main extends AppCompatActivity {
     public void cash_payemnt(View view) {
         tick.setVisibility(View.VISIBLE);
         tick2.setVisibility(View.INVISIBLE);
-        startActivity(intent);
+        startActivity(intentp);
     }
 
     public void add(View view) {
 
-        startActivity(intent2);
+        startActivity(intentp2);
     }
 
     public void visacard(View view) {
         tick2.setVisibility(View.VISIBLE);
         tick.setVisibility(View.INVISIBLE);
-        startActivity(intent3);
+        startActivity(intentp3);
     }
 }
