@@ -19,6 +19,7 @@ public class Visa_card extends AppCompatActivity {
     ImageView iv;
     Intent idel;
 
+
     Intent i5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class Visa_card extends AppCompatActivity {
         setContentView(R.layout.activity_visa_card);
 
         idel=new Intent(this,pay_main.class);
+
         i5=new Intent(this,editcard.class);
         myDb = new DatabaseHelper_pay(this);
         cn=(TextView)findViewById(R.id.textView14);
@@ -33,6 +35,7 @@ public class Visa_card extends AppCompatActivity {
         n=(TextView)findViewById(R.id.textView12);
         id=(TextView)findViewById(R.id.textViewne1);
         iv=(ImageView)findViewById(R.id.imageView5);
+
 
         Cursor res =myDb.getAllData();
         while(res.moveToNext()) {
@@ -43,7 +46,7 @@ public class Visa_card extends AppCompatActivity {
 
 
         }
-
+        DeleteData();
     }
 
     public void edit(View view) {
@@ -84,6 +87,6 @@ public class Visa_card extends AppCompatActivity {
                     }
                 }
         );
-
     }
+
 }
