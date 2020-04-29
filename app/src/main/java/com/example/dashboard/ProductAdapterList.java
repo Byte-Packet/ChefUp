@@ -2,6 +2,8 @@ package com.example.dashboard;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,21 +12,35 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 public class ProductAdapterList extends BaseAdapter {
     List<Product> menu;
     Context context;
+    OnItemClickListener mListener;
+    Product prod;
+    DatabaseHelper myDb;
+    String namevalue, addressvalue, emailvalue;
+    Bundle bundle;
 
     public ProductAdapterList(List<Product> menu, Context context) {
         this.menu = menu;
         this.context = context;
     }
 
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
     @Override
     public int getCount() {
         return menu.size();
@@ -40,7 +56,6 @@ public class ProductAdapterList extends BaseAdapter {
         return position;
     }
 
-    //this will return the ListView Item as a View
     @NonNull
     @Override
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -50,21 +65,28 @@ public class ProductAdapterList extends BaseAdapter {
         ImageView image = (ImageView)convertView.findViewById(R.id.imageView);
         TextView name = (TextView)convertView.findViewById(R.id.recipeName);
         Button view = (Button)convertView.findViewById(R.id.viewbtn) ;
-
-        final Product prod = menu.get(position);
+        Button del = (Button)convertView.findViewById(R.id.delbtn) ;
+        bundle = new Bundle();
+        prod = menu.get(position);
 
             image.setImageBitmap(prod.getImage());
             name.setText(prod.getName());
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+            myDb = new DatabaseHelper(context);
 
-                    Intent intent = new Intent(context, Recipe.class);
-                    context.startActivity(intent);
-                    final int id = 123456;
-                    intent.putExtra("id",prod);
-                }
-            });
+            view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                namevalue = "drynriehiuyhjihdnec";
+                addressvalue = "jidrgirchrth";
+                emailvalue = "ejr";
+                Intent intent= new Intent(context, Recipe.class);
+                intent.putExtra("Name",namevalue);
+                intent.putExtra("Address",addressvalue);
+                intent.putExtra("Email",emailvalue);
+
+                context.startActivity(intent);
+            }
+        });
 
         return convertView;
     }

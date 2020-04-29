@@ -37,5 +37,8 @@
     <string name="editcard_num">Card number</string>
     <string name="editcard_edate">Exp.date</string>
     <string name="editcard_cvv">CVV</string>
+    <string name="viewrecipe">View Dishes</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
 
 </resources>

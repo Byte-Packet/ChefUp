@@ -36,7 +36,7 @@ public class AddProduct extends AppCompatActivity {
     RadioButton cuisine5;
     RadioButton cuisine6;
     String cuisine;
-    
+
     EditText recipe;
     private static final int PICK_IMAGE = 100;
 
@@ -99,7 +99,8 @@ public class AddProduct extends AppCompatActivity {
         get.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                view.setImageBitmap(myDB.getimage(789));
+                Intent intent = new Intent(AddProduct.this, AdminMenu.class);
+                startActivity(intent);
             }
         });
     }
