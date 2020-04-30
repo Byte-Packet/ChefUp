@@ -29,6 +29,7 @@ public class AddDelivery extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_details);
 
+        //Database
         myDb = new DataHelper(this);
 
         etdoor = (EditText) findViewById(R.id.etdoor);
