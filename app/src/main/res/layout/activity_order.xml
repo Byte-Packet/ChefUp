@@ -82,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="47dp"
         android:layout_marginBottom="104dp"
-        android:background="#A19C94"
+        android:background="@drawable/box"
         android:gravity="center"
         android:onClick="orderPay"
         android:text="SELECT PAYMENT METHOD"
