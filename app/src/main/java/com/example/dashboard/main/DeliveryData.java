@@ -30,6 +30,7 @@ public class DeliveryData extends AppCompatActivity {
         myDb = new DataHelper(this);
 
 
+        //Casting
         door1 = findViewById(R.id.door1);
         address1 = findViewById(R.id.address1);
         city1 = findViewById(R.id.city1);
