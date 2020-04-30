@@ -1,4 +1,4 @@
-package com.example.dashboard;
+package com.example.dashboard.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.dashboard.R;
 
 public class Delivered extends AppCompatActivity {
 

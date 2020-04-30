@@ -15,9 +15,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dashboard.main.AddDelivery;
+import com.example.dashboard.main.DeliveryData;
+import com.example.dashboard.main.OrderConfirmed;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -26,6 +30,7 @@ public class Order extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FloatingActionButton add_button;
+    Button button;
 
     TextView sum_of_total;
 
@@ -47,6 +52,14 @@ public class Order extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent=new Intent(Order.this,AddOrder.class);
+                startActivity(intent);
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Order.this, DeliveryData.class);
                 startActivity(intent);
             }
         });

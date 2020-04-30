@@ -51,6 +51,7 @@ public class editcard extends AppCompatActivity {
 
 
         updateData();
+
     }
 
     public void updateData() {
