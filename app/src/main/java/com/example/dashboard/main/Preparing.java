@@ -19,6 +19,7 @@ public class Preparing extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preparing);
 
+        //Timer
         timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
