@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dashboard.Order;
 import com.example.dashboard.R;
 
 public class DeliveryData extends AppCompatActivity {
@@ -17,7 +18,7 @@ public class DeliveryData extends AppCompatActivity {
     DataHelper myDb;
 
     TextView door1,address1,city1,contact1;
-    Button select,edit,delete,add,view;
+    Button select,edit,delete,add,view,order;
 
 
     @Override
@@ -39,6 +40,7 @@ public class DeliveryData extends AppCompatActivity {
         delete = findViewById(R.id.delete1);
         add = findViewById(R.id.add);
         view = findViewById(R.id.view);
+        order = findViewById(R.id.order);
         viewAll();
         select.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +54,14 @@ public class DeliveryData extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DeliveryData.this, AddDelivery.class);
+                startActivity(intent);
+            }
+        });
+
+        order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DeliveryData.this, Order.class);
                 startActivity(intent);
             }
         });
