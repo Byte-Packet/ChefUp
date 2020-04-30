@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class editcard extends AppCompatActivity {
     DatabaseHelper_pay myDb;
     Button btnup;
-    EditText edname, ednumber, eddate;
+    EditText edname, ednumber, eddate,ecvv;
     TextView id;
     Intent in;
 
@@ -28,6 +28,7 @@ public class editcard extends AppCompatActivity {
         edname = (EditText) findViewById(R.id.editText);
         ednumber = (EditText) findViewById(R.id.editText2);
         eddate = (EditText) findViewById(R.id.editText7);
+        ecvv=(EditText)findViewById(R.id.editText9);
         id = (TextView) findViewById(R.id.textViewid);
 
         myDb = new DatabaseHelper_pay(this);
@@ -41,6 +42,7 @@ public class editcard extends AppCompatActivity {
 
             ednumber.setText("•••• •••• •••• "+cc2);
             eddate.setText(res.getString(3));
+            ecvv.setText(res.getString(4));
             id.setText(res.getString(0));
 
 
@@ -56,8 +58,8 @@ public class editcard extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isUpdate = myDb.updateData(id.getText().toString(), edname.getText().toString(),
-                                ednumber.getText().toString(), eddate.getText().toString());
+                        boolean isUpdate = myDb.updateData(id.getText().toString(),edname.getText().toString(),
+                                eddate.getText().toString(),ecvv.getText().toString());
                         if (isUpdate == true) {
                             startActivity(in);
                             Toast.makeText(editcard.this, "Data updated", Toast.LENGTH_LONG).show();
