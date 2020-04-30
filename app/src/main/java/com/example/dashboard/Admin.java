@@ -10,7 +10,7 @@ import android.widget.Button;
 public class Admin extends AppCompatActivity {
 
     Button adddish;
-    Button viewdish;
+    Button viewdish, updtdish, deldish;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +18,8 @@ public class Admin extends AppCompatActivity {
 
     adddish = (Button)findViewById(R.id.addDish);
     viewdish = (Button)findViewById(R.id.viewDish);
+    updtdish = (Button)findViewById(R.id.updateDish);
+    deldish = (Button)findViewById(R.id.delDish);
 
     adddish.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -33,5 +35,19 @@ public class Admin extends AppCompatActivity {
                 startActivity(intent);
             }
     });
+    updtdish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Admin.this, UpdateProduct.class);
+                startActivity(intent);
+            }
+        });
+    deldish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Admin.this, DeleteProduct.class);
+                startActivity(intent);
+            }
+        });
     }
 }

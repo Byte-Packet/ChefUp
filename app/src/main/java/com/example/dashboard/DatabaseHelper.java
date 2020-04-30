@@ -116,33 +116,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Product displayRecipe(Product rec){
 
         SQLiteDatabase db = this.getReadableDatabase();
-        int id = rec.getId();
+        String name1 = rec.getName();
         Product prod = null;
         ArrayList<Product> menulist = new ArrayList<>();
-        String query = "select * from "+ IMAGETAB + " where id = ?";
-        Cursor cursor = db.rawQuery(query,  new String[]{String.valueOf(id)});
+        String query = "select * from "+ IMAGETAB + " where NAME = ?";
+        Cursor cursor = db.rawQuery(query,  new String[]{String.valueOf(name1)});
         Bitmap bt = null;
         while(cursor.moveToNext())
         {
-            String name = cursor.getString(1);
+
+            int id = cursor.getInt(0);
             String recipe = cursor.getString(2);
             String cuisine = cursor.getString(3);
             byte[] img = cursor.getBlob(4);
             bt = BitmapFactory.decodeByteArray(img,0,img.length);
 
-            prod = new Product(id, bt, name, recipe, cuisine);
+            prod = new Product(id, bt, name1, recipe, cuisine);
         }
         return prod;
     }
-
-    public boolean deleteRecipe(Product id){
-
+    public boolean deleteRecipe(Product product){
 
         SQLiteDatabase db = this.getWritableDatabase();
-        int  idd = id.getId();
-        String ID = String.valueOf(idd);
         try{
-            long result = db.delete(IMAGETAB, "id = ", new String[]{ID});
+            String name = product.getName();
+            long result = db.delete(IMAGETAB, "id = ",new String[]{String.valueOf(name)});
             return true;
         }catch (SQLException e){
                 return false;

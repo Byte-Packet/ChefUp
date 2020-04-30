@@ -38,8 +38,8 @@
     <string name="editcard_edate">Exp.date</string>
     <string name="editcard_cvv">CVV</string>
     <string name="viewrecipe">View Dishes</string>
-    <string name="delete">Delete</string>
-    <string name="update">Update</string>
+    <string name="delete">Delete Dish</string>
+    <string name="update">Update Dish</string>
     <string name="already">Already Have an account</string>
 
     <string name="cuisine">Cuisine</string>
