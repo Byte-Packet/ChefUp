@@ -39,7 +39,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     Context context;
 
     public DatabaseHelper(@Nullable Context context) {
-        super(context, DATABASE_NAME, null, 3);
+        super(context, DATABASE_NAME, null, 5);
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -76,6 +76,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             contentValues.put("RECIPE",recipe);
             contentValues.put("Image",imgbyte);
             contentValues.put("CUISINE", cuisine);
+
             long result = db.insert(IMAGETAB, null,contentValues);
             fs.close();
             return true;

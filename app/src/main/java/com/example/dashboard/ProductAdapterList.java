@@ -48,8 +48,8 @@ public class ProductAdapterList extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
-        return menu;
+    public Product getItem(int position) {
+        return menu.get(position);
     }
 
     @Override
@@ -77,14 +77,10 @@ public class ProductAdapterList extends BaseAdapter {
             view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                namevalue = "drynriehiuyhjihdnec";
-                addressvalue = "jidrgirchrth";
-                emailvalue = "ejr";
                 Intent intent= new Intent(context, Recipe.class);
-                intent.putExtra("Name",namevalue);
-                intent.putExtra("Address",addressvalue);
-                intent.putExtra("Email",emailvalue);
-
+                Product pro = getItem(position);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("Parcel", pro);
                 context.startActivity(intent);
             }
         });

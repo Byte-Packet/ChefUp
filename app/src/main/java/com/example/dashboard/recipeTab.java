@@ -1,6 +1,7 @@
 package com.example.dashboard;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import androidx.fragment.app.Fragment;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 
 public class recipeTab extends Fragment {
 
@@ -20,6 +23,9 @@ public class recipeTab extends Fragment {
    TextView recipe;
    TextView recipeName;
    Product prod;
+   DatabaseHelper myDB;
+   Bitmap img;
+   ArrayList<Product> list;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,26 +39,28 @@ public class recipeTab extends Fragment {
        // return inflater.inflate(R.layout.fragment_recipe_tab, container, false);
         View view = inflater.inflate(R.layout.fragment_recipe_tab, container, false);
 
-        /*Intent intent = intent.getIntent();
-        Product prod = intent.getParcelableExtra("id");*/
-
+        //Intent intent = intent.getIntent();
+        //Product prod = intent.getParcelableExtra("id");
+        myDB = new DatabaseHelper(getActivity());
         button1 = view.findViewById(R.id.addToCart);
         recipe = view.findViewById(R.id.tot_recipe);
         recipeName = view.findViewById(R.id.recipeName);
+       // img = view.findViewById(R.id.)
 
 
+        list = myDB.displayMenu();
+        prod = list.get(0);
+
+        recipeName.setText(prod.getName().toString());
+        recipe.setText(prod.getRecipe().toString());
 
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(prod!=null) {
                     Intent intent = new Intent(getActivity(), Order.class);
+                    intent.putExtra("Obj", prod);
                     startActivity(intent);
-                }
-                else
-                    Toast.makeText(getActivity(), "No Object Selected", Toast.LENGTH_SHORT).show();
-
             }
         });
 
