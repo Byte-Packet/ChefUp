@@ -142,24 +142,31 @@
 
 
     </LinearLayout>
-    <Button
-        android:id="@+id/updateOrderDetails"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:text="Update order"
-        android:layout_gravity="center"
-        android:background="@color/orange"
-        android:padding="10dp" />
-    <Button
-        android:id="@+id/deleteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Delete order"
-        android:layout_gravity="center"
-        android:background="@color/orange"
-        android:padding="10dp" />
+        android:orientation="vertical"
+        android:layout_marginTop="250dp">
+        <Button
+            android:id="@+id/updateOrderDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Update order"
+            android:layout_gravity="center"
+            android:background="@color/orange"
+            android:padding="10dp" />
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Delete order"
+            android:layout_gravity="center"
+            android:background="@color/orange"
+            android:padding="10dp" />
+    </LinearLayout>
+
 
 </LinearLayout>
 
