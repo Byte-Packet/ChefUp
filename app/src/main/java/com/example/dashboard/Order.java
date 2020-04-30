@@ -44,6 +44,7 @@ public class Order extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
+        button=findViewById(R.id.button);
         sum_of_total=findViewById(R.id.totalValue);
         recyclerView=findViewById(R.id.recyclerview);
         add_button=findViewById(R.id.addOrder);

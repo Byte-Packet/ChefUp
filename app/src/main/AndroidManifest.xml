@@ -35,6 +35,7 @@
             android:name=".Menu"
             android:parentActivityName=".Login" />
         <activity android:name=".Order" />
+        
         <activity
             android:name=".AddOrder"
             android:parentActivityName=".Order" />
