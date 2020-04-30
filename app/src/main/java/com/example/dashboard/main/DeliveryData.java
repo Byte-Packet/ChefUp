@@ -42,6 +42,8 @@ public class DeliveryData extends AppCompatActivity {
         view = findViewById(R.id.view);
         order = findViewById(R.id.order);
         viewAll();
+
+        //Select Button
         select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
