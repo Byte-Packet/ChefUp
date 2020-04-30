@@ -46,7 +46,7 @@ public class AddDelivery extends AppCompatActivity {
         });
 
     }
-
+    //Register
     public void register() {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
