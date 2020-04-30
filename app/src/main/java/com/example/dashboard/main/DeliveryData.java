@@ -67,6 +67,7 @@ public class DeliveryData extends AppCompatActivity {
         });
 
     }
+    //View
     public void viewAll(){
         view.setOnClickListener(new View.OnClickListener() {
             @Override
