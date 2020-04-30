@@ -8,13 +8,12 @@
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingVertical="10dp"
-        android:gravity="center"
-        android:textColor="@android:color/background_dark"
-        android:background="@drawable/box"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="@string/addcard_msg2"
+        android:textColor="@android:color/background_dark"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
