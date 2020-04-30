@@ -62,4 +62,9 @@ public class pay_main extends AppCompatActivity {
         tick.setVisibility(View.INVISIBLE);
         startActivity(intent3);
     }
+
+    public void confirm(View view) {
+        Intent icart = new Intent(this,Order.class);
+        startActivity(icart);
+    }
 }
