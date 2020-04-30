@@ -35,7 +35,11 @@ public class editcard extends AppCompatActivity {
 
         while (res.moveToNext()) {
             edname.setText(res.getString(1));
-            ednumber.setText(res.getString(2));
+
+            String cc=res.getString(2);
+            String cc2 =  cc.substring(cc.length() - 4);
+
+            ednumber.setText("•••• •••• •••• "+cc2);
             eddate.setText(res.getString(3));
             id.setText(res.getString(0));
 
