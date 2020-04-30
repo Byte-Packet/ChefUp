@@ -58,8 +58,8 @@ public class recipeTab extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), Order.class);
-                    intent.putExtra("Obj", prod);
+                    Intent intent = new Intent(getActivity(), AddOrder.class);
+                  //  intent.putExtra("Obj", prod);
                     startActivity(intent);
             }
         });
