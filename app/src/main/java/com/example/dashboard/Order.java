@@ -30,7 +30,7 @@ public class Order extends AppCompatActivity {
 
     RecyclerView recyclerView;
     FloatingActionButton add_button;
-    Button button;
+    Button button,button3;
 
     TextView sum_of_total;
 
@@ -45,6 +45,7 @@ public class Order extends AppCompatActivity {
         setContentView(R.layout.activity_order);
 
         button=findViewById(R.id.button);
+        button3=findViewById(R.id.button3);
         sum_of_total=findViewById(R.id.totalValue);
         recyclerView=findViewById(R.id.recyclerview);
         add_button=findViewById(R.id.addOrder);
@@ -65,6 +66,13 @@ public class Order extends AppCompatActivity {
             }
         });
 
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Order.this,OrderConfirmed.class);
+                startActivity(intent);
+            }
+        });
         myDb=new DatabaseHelper_order(Order.this);
         order_id=new ArrayList<>();
         dish_name=new ArrayList<>();

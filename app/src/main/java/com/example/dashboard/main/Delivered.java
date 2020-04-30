@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dashboard.Menu;
 import com.example.dashboard.R;
 
 public class Delivered extends AppCompatActivity {
@@ -22,7 +23,7 @@ public class Delivered extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Delivered.this, AddDelivery.class);
+                Intent intent = new Intent(Delivered.this, Menu.class);
                 startActivity(intent);
             }
         });
