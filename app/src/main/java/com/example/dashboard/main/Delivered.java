@@ -19,6 +19,7 @@ public class Delivered extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivered);
 
+        //Button On CLick
         button = findViewById(R.id.thank);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
