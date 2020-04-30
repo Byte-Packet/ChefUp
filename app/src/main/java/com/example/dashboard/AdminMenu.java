@@ -10,11 +10,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class Menu extends AppCompatActivity {
+public class AdminMenu extends AppCompatActivity {
 
     ArrayList<Product> menulist = null;
 
-    String namevalue, addressvalue, emailvalue;
     Button view_recipe;
     ListView menu;
     DatabaseHelper myDB;
@@ -26,14 +25,6 @@ public class Menu extends AppCompatActivity {
         myDB = new DatabaseHelper(this);
         menu = (ListView) findViewById(R.id.menu);
         view_recipe = (Button)findViewById(R.id.viewbtn);
-        namevalue = "drynriehiuyhjihdnec";
-        addressvalue = "jidrgirchrth";
-        emailvalue = "ejr";
-        Intent intent= new Intent(Menu.this, ViewRec.class);
-        intent.putExtra("Name",namevalue);
-        intent.putExtra("Address",addressvalue);
-        intent.putExtra("Email",emailvalue);
-
         menulist = new ArrayList<>();
         loadData();
     }

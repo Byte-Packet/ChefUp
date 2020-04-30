@@ -142,5 +142,9 @@
         android:text="Get"
         android:layout_marginBottom="30dp"/>
     </LinearLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/menu"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

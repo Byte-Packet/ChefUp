@@ -3,6 +3,7 @@ package com.example.dashboard;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
@@ -15,6 +16,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import static android.os.Build.ID;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -109,7 +112,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return menulist;
     }
-
     public Product displayRecipe(Product rec){
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -132,14 +134,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return prod;
     }
 
-    public Bitmap getimage(Integer id){
+    public boolean deleteRecipe(Product id){
+
+
         SQLiteDatabase db = this.getWritableDatabase();
-        Bitmap bt = null;
-        Cursor cursor = db.rawQuery("select * from " + IMAGETAB + " where id = ?", new String[]{String.valueOf(id)});
-        if(cursor.moveToNext()){
-            byte[] img = cursor.getBlob(4);
-            bt = BitmapFactory.decodeByteArray(img,0,img.length);
+        int  idd = id.getId();
+        String ID = String.valueOf(idd);
+        try{
+            long result = db.delete(IMAGETAB, "id = ", new String[]{ID});
+            return true;
+        }catch (SQLException e){
+                return false;
         }
-        return bt;
+
     }
 }

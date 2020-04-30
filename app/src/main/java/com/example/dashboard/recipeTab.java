@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -32,8 +33,8 @@ public class recipeTab extends Fragment {
        // return inflater.inflate(R.layout.fragment_recipe_tab, container, false);
         View view = inflater.inflate(R.layout.fragment_recipe_tab, container, false);
 
-        //Intent intent = intent.getIntent();
-        //Product prod = intent.getParcelableExtra("id");
+        /*Intent intent = intent.getIntent();
+        Product prod = intent.getParcelableExtra("id");*/
 
         button1 = view.findViewById(R.id.addToCart);
         recipe = view.findViewById(R.id.tot_recipe);
@@ -41,12 +42,16 @@ public class recipeTab extends Fragment {
 
 
 
+
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent=new Intent(getActivity(),AddOrder.class);
-                startActivity(intent);
+                if(prod!=null) {
+                    Intent intent = new Intent(getActivity(), Order.class);
+                    startActivity(intent);
+                }
+                else
+                    Toast.makeText(getActivity(), "No Object Selected", Toast.LENGTH_SHORT).show();
 
             }
         });

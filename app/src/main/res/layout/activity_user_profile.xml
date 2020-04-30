@@ -110,6 +110,7 @@
 
 
         </LinearLayout>
+
         <Button
             android:id="@+id/button6"
             android:layout_width="wrap_content"
@@ -119,12 +120,11 @@
             android:text="Edit"
             android:textColor="@color/black"
             android:textSize="18dp"
-            android:layout_gravity="center"
+            android:layout_marginLeft="80dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     </LinearLayout>
 

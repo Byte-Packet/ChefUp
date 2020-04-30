@@ -13,7 +13,7 @@ public class Login extends AppCompatActivity {
 
     private EditText name;
     private EditText password;
-    private Button submit;
+    private Button submit, reg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +23,20 @@ public class Login extends AppCompatActivity {
         name = (EditText)findViewById(R.id.username);
         password = (EditText)findViewById(R.id.password);
         submit = (Button)findViewById(R.id.login);
+        reg = (Button)findViewById(R.id.register);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 validate(name.getText().toString(), password.getText().toString());
+            }
+        });
+
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this,Register.class);
+                startActivity(intent);
             }
         });
     }

@@ -1,5 +1,6 @@
 package com.example.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,7 @@ public class addCard extends AppCompatActivity {
     DatabaseHelper_pay myDb;
     EditText editName,editCardNo,editEdate,editCvv;
     Button btnAdd;
+    Intent iadd;
 
     AlertDialog.Builder alertBuilder;
 
@@ -23,6 +25,9 @@ public class addCard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_card);
+
+        iadd=new Intent(this,MainActivity.class);
+
         myDb = new DatabaseHelper_pay(this);
 
         final CardForm cardForm = (CardForm) findViewById(R.id.cardform);
@@ -60,6 +65,7 @@ public class addCard extends AppCompatActivity {
         });    */
     }
     public void AddData(){
+
         btnAdd.setOnClickListener(
                 new View.OnClickListener(){
 
@@ -68,8 +74,10 @@ public class addCard extends AppCompatActivity {
                         boolean isInserted = myDb.insertData(editName.getText().toString(),
                                 editCardNo.getText().toString(),editEdate.getText().toString(),
                                 editCvv.getText().toString());
-                        if(isInserted =true)
-                            Toast.makeText(addCard.this,"Data inserted",Toast.LENGTH_LONG).show();
+                        if(isInserted =true) {
+                            startActivity(iadd);
+                            Toast.makeText(addCard.this, "Data inserted", Toast.LENGTH_LONG).show();
+                        }
                         else
                             Toast.makeText(addCard.this,"Data not inserted",Toast.LENGTH_LONG).show();
                     }

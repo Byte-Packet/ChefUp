@@ -14,7 +14,15 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@color/orange"
+            android:layout_marginBottom="20dp"
             android:id="@+id/addDish"
             android:text="@string/addrecipe"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/orange"
+            android:id="@+id/viewDish"
+            android:layout_marginBottom="20dp"
+            android:text="@string/viewrecipe"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
