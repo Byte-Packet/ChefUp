@@ -26,7 +26,7 @@ public class addCard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_card);
 
-        iadd=new Intent(this,MainActivity.class);
+        iadd=new Intent(this,pay_main.class);
 
         myDb = new DatabaseHelper_pay(this);
 

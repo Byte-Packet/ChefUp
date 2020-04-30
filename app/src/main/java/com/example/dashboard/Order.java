@@ -137,4 +137,9 @@ public class Order extends AppCompatActivity {
 
     }
 
+    public void orderPay(View view) {
+        Intent inew= new Intent(this,pay_main.class);
+        startActivity(inew);
+
+    }
 }

@@ -22,6 +22,11 @@
         <activity android:name=".AddProduct" />
         <activity android:name=".Admin" />
         <activity android:name=".pay_main" />
+        <activity android:name=".editcard"/>
+        <activity android:name=".addCard" />
+        <activity android:name=".Visa_card" />
+        <activity android:name=".add_payment_method" />
+        <activity android:name=".cash" />
         <activity android:name=".Recipe" />
         <activity
             android:name=".Menu"
