@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="30dp">
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -24,5 +24,19 @@
             android:id="@+id/viewDish"
             android:layout_marginBottom="20dp"
             android:text="@string/viewrecipe"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/orange"
+            android:id="@+id/delDish"
+            android:layout_marginBottom="20dp"
+            android:text="@string/delete"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/orange"
+            android:id="@+id/updateDish"
+            android:layout_marginBottom="20dp"
+            android:text="@string/update"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -79,7 +79,7 @@ public class AdminMenuAdapter extends BaseAdapter {
         prod = menu.get(position);
 
         image.setImageBitmap(prod.getImage());
-        name.setText(prod.getName());
+        name.setText(prod.getId() + "  " + prod.getName());
         myDb = new DatabaseHelper(context);
         menu = myDb.displayMenu();
         id = prod.getId();
@@ -89,60 +89,29 @@ public class AdminMenuAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, Recipe.class);
-                String name = "Thevidiya Piaya";
-                intent.putExtra("name", name);
                 context.startActivity(intent);
             }
         });
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, Recipe.class);
-                String name = "Thevidiya Piaya";
-                intent.putExtra("name", name);
-                //bundle.putParcelable("theobject", prod);
+                Intent intent = new Intent(context, DeleteProduct.class);
                 context.startActivity(intent);
             }
         });
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Product pro = menu.get(0);
-                String name = "Hello";
-                myDb.deleteRecipe(pro);
+                boolean check =  myDb.deleteRecipe(prod);
+                if(check == false){
+                    Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
+                }
+
+                //Intent intent = new Intent(context, DeleteProduct.class);
+                //context.startActivity(intent);
             }
         });
 
         return convertView;
-    }
-    private void removeRecipe(final int position) {
-        //Creating an alert dialog to confirm the deletion
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Are you sure you want to delete this?");
-
-        //if the response is positive in the alert
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-                //removing the item
-                menulist.remove(position);
-
-                //reloading the list
-                notifyDataSetChanged();
-            }
-        });
-
-        //if response is negative nothing is being done
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-
-        //creating and displaying the alert dialog
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
     }
 }

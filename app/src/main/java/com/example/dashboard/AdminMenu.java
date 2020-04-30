@@ -12,12 +12,15 @@ import java.util.ArrayList;
 
 public class AdminMenu extends AppCompatActivity {
 
-    ArrayList<Product> menulist = null;
+    static ArrayList<Product> menulist = null;
 
     Button view_recipe;
     ListView menu;
     DatabaseHelper myDB;
     AdminMenuAdapter adapter;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,14 +29,16 @@ public class AdminMenu extends AppCompatActivity {
         menu = (ListView) findViewById(R.id.menu);
         view_recipe = (Button)findViewById(R.id.viewbtn);
         menulist = new ArrayList<>();
+        menulist = myDB.displayMenu();
         loadData();
     }
     private void loadData() {
-        menulist = myDB.displayMenu();
         adapter = new AdminMenuAdapter(menulist, this);
         menu.setAdapter(adapter);
     }
-
+    public static void delete() {
+        menulist.remove(0);
+    }
 }
 
 
