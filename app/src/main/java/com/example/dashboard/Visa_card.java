@@ -41,7 +41,11 @@ public class Visa_card extends AppCompatActivity {
         while(res.moveToNext()) {
             id.setText(res.getString(0));
             n.setText(res.getString(1));
-            cn.setText(res.getString(2));
+
+            String cc=res.getString(2);
+            String cc2 =  cc.substring(cc.length() - 4);
+
+            cn.setText("•••• •••• •••• "+cc2);
             ed.setText(res.getString(3));
 
 

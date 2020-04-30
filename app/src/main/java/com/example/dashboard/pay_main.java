@@ -35,7 +35,10 @@ public class pay_main extends AppCompatActivity {
 
         while(res.moveToNext()) {
 
-            cn.setText(res.getString(2));
+            String cc=res.getString(2);
+            String cc2 =  cc.substring(cc.length() - 4);
+
+            cn.setText("•••• "+cc2);
             ivis.setVisibility(View.VISIBLE);
             cn.setVisibility(View.VISIBLE);
 
