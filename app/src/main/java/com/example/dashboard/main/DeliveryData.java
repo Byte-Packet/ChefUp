@@ -26,6 +26,7 @@ public class DeliveryData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_data);
 
+        //Database
         myDb = new DataHelper(this);
 
 
