@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,9 +27,11 @@ public class Order extends AppCompatActivity {
     RecyclerView recyclerView;
     FloatingActionButton add_button;
 
+    TextView sum_of_total;
+
     DatabaseHelper_order myDb;
 
-    ArrayList<String> order_id,dish_name,quantity,price;
+    ArrayList<String> order_id,dish_name,quantity,price,total;
 
     CustomAdapter customAdapter;
     @Override
@@ -36,8 +39,9 @@ public class Order extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
-        //recyclerView=findViewById(R.id.recyclerview);
-        //add_button=findViewById(R.id.addOrder);
+        sum_of_total=findViewById(R.id.totalValue);
+        recyclerView=findViewById(R.id.recyclerview);
+        add_button=findViewById(R.id.addOrder);
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,13 +56,15 @@ public class Order extends AppCompatActivity {
         dish_name=new ArrayList<>();
         quantity=new ArrayList<>();
         price=new ArrayList<>();
+        total=new ArrayList<>();
 
+        sum_of_total.setText(Integer.toString(myDb.getTotal()));
         storeDataInArrays();
-        customAdapter=new CustomAdapter(Order.this,Order.this,order_id,dish_name,quantity,price);
+        customAdapter=new CustomAdapter(Order.this,Order.this,order_id,dish_name,quantity,price,total);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Order.this));
 
-        openUserProfile();
+
     }
 
     @Override
@@ -83,6 +89,7 @@ public class Order extends AppCompatActivity {
                 dish_name.add(cursor.getString(1));
                 quantity.add(cursor.getString(2));
                 price.add(cursor.getString(3));
+                total.add(cursor.getString(4));
             }
         }
     }
@@ -95,17 +102,17 @@ public class Order extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        /*if (item.getItemId()==R.id.deleteAll){
+        if (item.getItemId()==R.id.deleteAll){
             //Toast.makeText(this,"Delete",Toast.LENGTH_SHORT).show();
             confirmDialog();
-        }*/
+        }
         return super.onOptionsItemSelected(item);
     }
     void confirmDialog(){
 
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setTitle("Delete All order ?");
-        builder.setMessage("Are you sure want to delete ?? ");
+        builder.setTitle("Delete All order ");
+        builder.setMessage("Are you sure want to delete ? ");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -129,8 +136,10 @@ public class Order extends AppCompatActivity {
         builder.create().show();
 
     }
-    public void openUserProfile(){
-        Intent intent=new Intent(this,EditUserProfile.class);
-        startActivity(intent);
+
+    public void orderPay(View view) {
+        Intent inew= new Intent(this,pay_main.class);
+        startActivity(inew);
+
     }
 }

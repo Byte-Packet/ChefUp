@@ -56,13 +56,13 @@ public class DatabaseHelper_pay extends SQLiteOpenHelper {
     }
 
 
-    public boolean updateData(String id,String name,String cardno,String edate){
+    public boolean updateData(String id, String name, String edate, String cvv){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_1,id);
         contentValues.put(COL_2,name);
-        contentValues.put(COL_3,cardno);
         contentValues.put(COL_4,edate);
+        contentValues.put(COL_5,cvv);
         db.update(TABLE_NAME, contentValues, "ID = ?",new String[] { id });
         return true;
 

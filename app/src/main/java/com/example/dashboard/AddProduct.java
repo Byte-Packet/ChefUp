@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class AddProduct extends AppCompatActivity {
@@ -29,14 +30,9 @@ public class AddProduct extends AppCompatActivity {
     EditText name;
     String dishname;
     String dishrecipe;
-    RadioButton cuisine1;
-    RadioButton cuisine2;
-    RadioButton cuisine3;
-    RadioButton cuisine4;
-    RadioButton cuisine5;
-    RadioButton cuisine6;
+    Spinner cuis;
     String cuisine;
-    
+
     EditText recipe;
     private static final int PICK_IMAGE = 100;
 
@@ -53,12 +49,7 @@ public class AddProduct extends AppCompatActivity {
 
         number = (EditText)findViewById(R.id.number);
         myDB = new DatabaseHelper(this);
-        cuisine1 = (RadioButton)findViewById(R.id.cuisine1) ;
-        cuisine2 = (RadioButton)findViewById(R.id.cuisine2) ;
-        cuisine3 = (RadioButton)findViewById(R.id.cuisine3) ;
-        cuisine4 = (RadioButton)findViewById(R.id.cuisine4) ;
-        cuisine5 = (RadioButton)findViewById(R.id.cuisine5) ;
-        cuisine6 = (RadioButton)findViewById(R.id.cuisine6) ;
+        cuis = (Spinner)findViewById(R.id.cuisine);
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             // Permission is not granted
@@ -71,24 +62,7 @@ public class AddProduct extends AppCompatActivity {
 
                 dishname = name.getText().toString();
                 dishrecipe = recipe.getText().toString();
-                if(cuisine1.isChecked()==true){
-                    cuisine = "Sri Lankan";
-                }
-                else if(cuisine2.isChecked()==true){
-                    cuisine = "Indian";
-                }
-                else if(cuisine3.isChecked()==true){
-                    cuisine = "Italian";
-                }
-                else if(cuisine4.isChecked()==true) {
-                    cuisine = "American";
-                }
-                else if(cuisine5.isChecked()==true){
-                    cuisine = "Arabic";
-                }
-                else if(cuisine6.isChecked()==true){
-                    cuisine = "Chinese";
-                }
+                cuisine = cuis.getSelectedItem().toString();
 
                 Intent intent = new Intent(Intent.ACTION_PICK, Uri.parse(
                         "content://media/internal/images/media"
@@ -99,7 +73,8 @@ public class AddProduct extends AppCompatActivity {
         get.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                view.setImageBitmap(myDB.getimage(789));
+                Intent intent = new Intent(AddProduct.this, AdminMenu.class);
+                startActivity(intent);
             }
         });
     }

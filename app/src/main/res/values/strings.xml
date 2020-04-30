@@ -37,5 +37,21 @@
     <string name="editcard_num">Card number</string>
     <string name="editcard_edate">Exp.date</string>
     <string name="editcard_cvv">CVV</string>
+    <string name="viewrecipe">View Dishes</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
+    <string name="already">Already Have an account</string>
+
+    <string name="cuisine">Cuisine</string>
+    <string name="cuisine_prompt">Choose Cuisine</string>
+
+    <string-array name="cuisine_array">
+        <item>Sri Lankan</item>
+        <item>American</item>
+        <item>Indonesian</item>
+        <item>Indian</item>
+        <item>Italian</item>
+        <item>Chinese</item>
+    </string-array>
 
 </resources>

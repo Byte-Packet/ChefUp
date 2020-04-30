@@ -8,6 +8,12 @@
     tools:context=".Order"
     android:orientation="vertical">
 
+
+
+
+
+
+
     <LinearLayout
 
         android:layout_marginRight="16dp"
@@ -15,7 +21,7 @@
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="220dp"
         android:background="@drawable/layout_bottom"
         android:orientation="horizontal">
 
@@ -107,7 +113,27 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/quantity" />
+
             </LinearLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="10dp"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="total price"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/price"
+
+                />
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -118,26 +144,49 @@
 
 
     </LinearLayout>
+
     <Button
-        android:id="@+id/addOrderDetails"
+        android:id="@+id/yourCart"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:text="Add order"
+        android:layout_height="62dp"
         android:layout_gravity="center"
-        android:background="@color/orange"
-        android:padding="10dp"
-        />
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Add your profile"
-        android:layout_marginTop="25dp"
-        android:background="@color/orange"
-        android:padding="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/ic_shopping_cart"
+
 
         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+
+        android:layout_marginTop="220dp">
+        <Button
+            android:id="@+id/addOrderDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Add order"
+            android:layout_gravity="center"
+            android:background="@color/orange"
+            android:padding="10dp"
+            />
+        <Button
+            android:id="@+id/addProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add your profile"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@color/orange"
+            android:padding="10dp"/>
+
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
