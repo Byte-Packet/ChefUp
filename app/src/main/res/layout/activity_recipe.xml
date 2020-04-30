@@ -17,12 +17,7 @@
             android:background="@drawable/chicken"
             android:id="@+id/pic"
             android:elevation="10dp"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text=""
-            android:textColor="@color/black"
-            android:id="@+id/idview"/>
+
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"

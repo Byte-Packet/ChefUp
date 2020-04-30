@@ -35,7 +35,7 @@ public class Recipe extends AppCompatActivity {
 
         image = (ImageView)findViewById(R.id.pic);
         myDB = new DatabaseHelper(this);
-        id = (TextView)findViewById(R.id.idview);
+        //id = (TextView)findViewById(R.id.idview);
         //textView2.setText(getIntent().getStringExtra("Address"));
         prodList = new ArrayList<>();
         //id.setText(prod.getName());

@@ -70,12 +70,35 @@
                             android:text="Masala Dosa"
                             android:textAppearance="@style/recipeTitle"/>
 
-                        <Button
-                            android:layout_width="100dp"
-                            android:layout_marginTop="10dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/box"
-                            android:text="@string/view" />
+                            android:orientation="horizontal"
+                            android:layout_weight="100">
+
+                            <Button
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/box"
+                                android:layout_marginRight="5dp"
+                                android:text="@string/view"
+                                android:layout_weight="33"/>
+                            <Button
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/box"
+                                android:layout_marginRight="5dp"
+                                android:text="Update"
+                                android:layout_weight="33"/>
+                            <Button
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/box"
+                                android:text="Delete"
+                                android:layout_weight="33"/>
+
+
+                        </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -95,12 +118,35 @@
                             android:layout_height="wrap_content"
                             android:text="Momos"
                             android:textAppearance="@style/recipeTitle"/>
-                        <Button
-                            android:layout_width="100dp"
-                            android:layout_marginTop="10dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/box"
-                            android:text="@string/view" />
+                            android:orientation="horizontal"
+                            android:layout_weight="100">
+
+                            <Button
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/box"
+                                android:layout_marginRight="5dp"
+                                android:text="@string/view"
+                                android:layout_weight="33"/>
+                            <Button
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/box"
+                                android:layout_marginRight="5dp"
+                                android:text="Update"
+                                android:layout_weight="33"/>
+                            <Button
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/box"
+                                android:text="Delete"
+                                android:layout_weight="33"/>
+
+
+                        </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout

@@ -51,8 +51,8 @@ public class recipeTab extends Fragment {
         list = myDB.displayMenu();
         prod = list.get(0);
 
-        recipeName.setText(prod.getName().toString());
-        recipe.setText(prod.getRecipe().toString());
+        /*recipeName.setText(prod.getName().toString());
+        recipe.setText(prod.getRecipe().toString());*/
 
 
         button1.setOnClickListener(new View.OnClickListener() {
