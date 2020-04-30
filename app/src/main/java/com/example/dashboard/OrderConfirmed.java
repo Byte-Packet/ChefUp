@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dashboard.main.Preparing;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -21,7 +23,7 @@ public class OrderConfirmed extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(OrderConfirmed.this,Preparing.class);
+                Intent intent = new Intent(OrderConfirmed.this, Preparing.class);
                 startActivity(intent);
             }
         },5000);

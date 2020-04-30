@@ -19,6 +19,7 @@ public class OrderConfirmed extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_confirmed);
 
+        //Timer
         timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override

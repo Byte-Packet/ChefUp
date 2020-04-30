@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.dashboard.Order;
 import com.example.dashboard.R;
 
 public class DeliveryData extends AppCompatActivity {
@@ -17,7 +18,7 @@ public class DeliveryData extends AppCompatActivity {
     DataHelper myDb;
 
     TextView door1,address1,city1,contact1;
-    Button select,edit,delete,add,view;
+    Button select,edit,delete,add,view,order;
 
 
     @Override
@@ -25,9 +26,11 @@ public class DeliveryData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_data);
 
+        //Database
         myDb = new DataHelper(this);
 
 
+        //Casting
         door1 = findViewById(R.id.door1);
         address1 = findViewById(R.id.address1);
         city1 = findViewById(R.id.city1);
@@ -39,7 +42,10 @@ public class DeliveryData extends AppCompatActivity {
         delete = findViewById(R.id.delete1);
         add = findViewById(R.id.add);
         view = findViewById(R.id.view);
+        order = findViewById(R.id.order);
         viewAll();
+
+        //Select Button
         select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +54,7 @@ public class DeliveryData extends AppCompatActivity {
             }
         });
 
+        //add Button
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +63,17 @@ public class DeliveryData extends AppCompatActivity {
             }
         });
 
+        //Order Button
+        order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DeliveryData.this, Order.class);
+                startActivity(intent);
+            }
+        });
+
     }
+    //View
     public void viewAll(){
         view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +98,7 @@ public class DeliveryData extends AppCompatActivity {
         });
     }
 
+    //ShowMessage
     public void showMessage(String title,String Message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
