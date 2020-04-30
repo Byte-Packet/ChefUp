@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DeliveryData"
+    tools:context=".main.DeliveryData"
     android:orientation="vertical">
 
     <TextView
@@ -61,8 +61,7 @@
                         android:id="@+id/door1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="54,"
-                        android:textColor="#fff"
+                        android:text="@string/door"
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
@@ -70,7 +69,7 @@
                         android:id="@+id/address1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="National Housing Scheme"
+                        android:text="@string/address"
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
@@ -78,7 +77,7 @@
                         android:id="@+id/city1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Wattala"
+                        android:text="@string/city"
                         android:textSize="20dp"
                         android:textStyle="bold" />
 
@@ -86,7 +85,7 @@
                         android:id="@+id/contact1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="077 144 0940"
+                        android:text="@string/contact"
                         android:textSize="20dp" />
 
                 </LinearLayout>
@@ -104,7 +103,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/gradient"
-                        android:text="Select"
+                        android:text="@string/select"
                         android:textColor="#fff" />
 
                     <Button
@@ -115,7 +114,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/cancel_btn"
-                        android:text="Edit"
+                        android:text="@string/edit"
                         android:textColor="#000" />
 
                     <Button
@@ -126,7 +125,7 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/cancel_btn"
-                        android:text="Delete"
+                        android:text="@string/delete"
                         android:textColor="#000" />
                 </LinearLayout>
             </LinearLayout>
@@ -136,128 +135,31 @@
 
 
     </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/gradient"
-        app:cardCornerRadius="5dp">
 
-        <LinearLayout
-            android:id="@+id/ll2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/door2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="16,"
-                        android:textColor="#fff"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/address2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Liberty Plaza"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/city2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Colombo 3."
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/contact2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="077 144 0940"
-                        android:textSize="20dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/select2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="20dp"
-                        android:background="@drawable/gradient"
-                        android:text="Select"
-                        android:textColor="#fff" />
-
-                    <Button
-                        android:id="@+id/edit2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="20dp"
-                        android:background="@drawable/cancel_btn"
-                        android:text="Edit"
-                        android:textColor="#000" />
-
-                    <Button
-                        android:id="@+id/delete2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="20dp"
-                        android:background="@drawable/cancel_btn"
-                        android:text="Delete"
-                        android:textColor="#000" />
-                </LinearLayout>
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/add"
+    android:id="@+id/add"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/card1"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/cancel_btn"
+    android:text="@string/addNewAddress"
+    android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add New Address"
-        android:textSize="15sp"
-        android:layout_below="@id/card"
-        android:layout_marginTop="20dp"
+        android:layout_below="@id/add"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/cancel_btn" />
+        android:layout_marginTop="20dp"
+        android:background="@drawable/cancel_btn"
+        android:text="View"
+        android:textSize="15sp" />
+
+
+
+
 </LinearLayout>

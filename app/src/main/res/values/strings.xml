@@ -38,8 +38,8 @@
     <string name="editcard_edate">Exp.date</string>
     <string name="editcard_cvv">CVV</string>
     <string name="viewrecipe">View Dishes</string>
-    <string name="delete">Delete Dish</string>
-    <string name="update">Update Dish</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
     <string name="already">Already Have an account</string>
 
     <string name="cuisine">Cuisine</string>
@@ -54,4 +54,15 @@
         <item>Chinese</item>
     </string-array>
 
+
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="contact">Contact No</string>
+    <string name="save">save</string>
+    <string name="deliveryDetails">Delivery Details</string>
+    <string name="door">Door No</string>
+    <string name="select">select</string>
+    <string name="edit">edit</string>
+
+    <string name="addNewAddress">Add New Address</string>
 </resources>

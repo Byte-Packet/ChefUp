@@ -5,23 +5,95 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/delivery_bg"
-    tools:context=".AddDelivery">
+    tools:context=".main.AddDelivery">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="168dp"
-        android:fontFamily=""
-        android:text="Delivery Details"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/deliveryDetails"
         android:textColor="#000000"
         android:textSize="30sp"
-        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <EditText
+        android:id="@+id/etcontact"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text"
+        android:drawableStart="@drawable/ic_call_black_24dp"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Enter Contact Number"
+        android:importantForAutofill="no"
+        android:inputType="phone"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etcity" />
+
+    <EditText
+        android:id="@+id/etaddress"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text"
+        android:drawableStart="@drawable/ic_home_black_24dp"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Enter Delivery Address"
+        android:importantForAutofill="no"
+        android:inputType="textPostalAddress"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etdoor" />
+
+    <EditText
+        android:id="@+id/etdoor"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text"
+        android:drawableStart="@drawable/ic_home_black_24dp"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Enter Door No"
+        android:importantForAutofill="no"
+        android:inputType="textPostalAddress"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/etcity"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text"
+        android:drawableStart="@drawable/ic_location_city_black_24dp"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Enter City"
+        android:importantForAutofill="no"
+        android:inputType="textPostalAddress"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etaddress" />
 
     <Button
         android:id="@+id/save"
@@ -30,76 +102,12 @@
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/gradient"
-        android:text="save"
+        android:text="@string/save"
         android:textColor="#fff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact" />
+        app:layout_constraintTop_toBottomOf="@+id/etcontact" />
 
-    <EditText
-        android:id="@+id/contact"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text"
-        android:drawableLeft="@drawable/ic_call_black_24dp"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="Contact Number"
-        android:inputType="phone"
-        android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/city" />
 
-    <EditText
-        android:id="@+id/address"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:background="@drawable/edit_text"
-        android:drawableLeft="@drawable/ic_home_black_24dp"
-        android:paddingLeft="10dp"
-        android:drawablePadding="10dp"
-        android:hint="Enter Your Address "
-        android:inputType="textPostalAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/door" />
-
-    <EditText
-        android:id="@+id/door"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:background="@drawable/edit_text"
-        android:drawableLeft="@drawable/ic_home_black_24dp"
-        android:paddingLeft="10dp"
-        android:drawablePadding="10dp"
-        android:hint="Door No"
-        android:inputType="textPostalAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/city"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/edit_text"
-        android:drawableLeft="@drawable/ic_location_city_black_24dp"
-        android:drawablePadding="10dp"
-        android:ems="10"
-        android:hint="City"
-        android:inputType="textPostalAddress"
-        android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
