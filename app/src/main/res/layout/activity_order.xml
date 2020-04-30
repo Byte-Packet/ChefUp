@@ -8,9 +8,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="408dp"
-        android:layout_height="536dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="508dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -18,12 +18,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="144dp"
+        android:layout_marginBottom="216dp"
         android:background="@color/orange"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,26 +32,10 @@
         app:srcCompat="@drawable/ic_add" />
 
     <TextView
-        android:id="@+id/totalDisplay"
-        android:layout_width="206dp"
-        android:layout_height="48dp"
-
-        android:layout_marginBottom="96dp"
-        android:background="@color/white"
-        android:gravity="right"
-        android:padding="10dp"
-        android:paddingRight="10dp"
-        android:text="TOTAL : Rs."
-        android:textSize="22dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/totalValue"
         android:layout_width="204dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="152dp"
         android:background="@color/white"
         android:gravity="left"
         android:padding="10dp"
@@ -62,25 +47,41 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/totalDisplay" />
 
+    <TextView
+        android:id="@+id/totalDisplay"
+        android:layout_width="206dp"
+        android:layout_height="48dp"
+
+        android:layout_marginBottom="152dp"
+        android:background="@color/white"
+        android:gravity="right"
+        android:padding="10dp"
+        android:paddingRight="10dp"
+        android:text="TOTAL : Rs."
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
         android:background="@color/orange"
+
         android:text="Add Delivery Details"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 
     <TextView
         android:id="@+id/textView21"
         android:layout_width="match_parent"
         android:layout_height="47dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="104dp"
         android:background="#A19C94"
         android:gravity="center"
         android:onClick="orderPay"
@@ -89,7 +90,19 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/orange"
+        android:text="Confirm order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

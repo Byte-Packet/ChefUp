@@ -22,6 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".main.DeliveryData"/>
         <activity android:name=".AddProduct" />
         <activity android:name=".Admin" />
         <activity android:name=".pay_main" />
@@ -35,7 +36,7 @@
             android:name=".Menu"
             android:parentActivityName=".Login" />
         <activity android:name=".Order" />
-        
+
         <activity
             android:name=".AddOrder"
             android:parentActivityName=".Order" />
