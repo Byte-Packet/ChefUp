@@ -3,6 +3,7 @@ package com.example.dashboard;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +17,13 @@ import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
 
-   private Context context;
-   private ArrayList order_id,dish_name,quantity,price;
+    private Context context;
+    private ArrayList order_id,dish_name,quantity,total,price;
 
-   Activity activity;
 
-    CustomAdapter(Activity activity,Context context,ArrayList order_id,ArrayList dish_name,ArrayList quantity,ArrayList price){
+    Activity activity;
+
+    CustomAdapter(Activity activity,Context context,ArrayList order_id,ArrayList dish_name,ArrayList quantity,ArrayList price,ArrayList total){
 
         this.activity=activity;
         this.context=context;
@@ -29,6 +31,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         this.dish_name=dish_name;
         this.quantity=quantity;
         this.price=price;
+        this.total=total;
     }
     @NonNull
     @Override
@@ -48,6 +51,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.dish_name_txt.setText(String.valueOf(dish_name.get(position)));
         holder.quantity_txt.setText(String.valueOf(quantity.get(position)));
         holder.price_txt.setText(String.valueOf(price.get(position)));
+        holder.total_txt.setText(String.valueOf(total.get(position)));
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +61,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 intent.putExtra("dishName",String.valueOf(dish_name.get(position)));
                 intent.putExtra("qty",String.valueOf(quantity.get(position)));
                 intent.putExtra("price",String.valueOf(price.get(position)));
+               intent.putExtra("total",String.valueOf(total.get(position)));
                 activity.startActivityForResult(intent,1);
             }
         });
@@ -68,7 +73,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView order_id_txt,dish_name_txt,quantity_txt,price_txt;
+        TextView order_id_txt,dish_name_txt,quantity_txt,price_txt,total_txt;
         LinearLayout mainLayout;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -78,6 +83,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             dish_name_txt=itemView.findViewById(R.id.dish_name_txt);
             quantity_txt=itemView.findViewById(R.id.quantity_txt);
             price_txt=itemView.findViewById(R.id.price_txt);
+            total_txt=itemView.findViewById(R.id.total_txt);
             mainLayout=itemView.findViewById(R.id.mainLayout);
         }
     }

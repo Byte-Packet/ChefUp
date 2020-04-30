@@ -13,9 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -23,22 +25,21 @@
         <activity android:name=".Admin" />
         <activity android:name=".pay_main" />
         <activity android:name=".Recipe" />
+        <activity android:name=".Order"/>
         <activity
             android:name=".Menu"
             android:parentActivityName=".Login" />
-        <activity android:name=".Order"/>
-        <activity android:name=".AddOrder"
-            android:parentActivityName=".Order"/>
-        <activity android:name=".Update_Order"/>
-        <activity android:name=".EditUserProfile"
-            android:parentActivityName=".AddOrder"/>
+        <activity
+            android:name=".AddOrder"
+             />
+        <activity android:name=".Update_Order" />
+        <activity
+            android:name=".EditUserProfile"
+            android:parentActivityName=".AddOrder" />
         <activity android:name=".UserProfile" />
-
-
-        <activity android:name=".Login"
-            android:parentActivityName=".MainActivity">
-
-        </activity>
+        <activity
+            android:name=".Login"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>

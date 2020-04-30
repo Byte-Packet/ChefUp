@@ -1,5 +1,6 @@
 package com.example.dashboard;
 
+import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -9,16 +10,19 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 public class DatabaseHelper_order extends SQLiteOpenHelper {
 
     private Context context;
     private static final String DATABASE_NAME="ChefUp_Order.db";
-    private static final int DATABASE_VERSION=3;
+    private static final int DATABASE_VERSION=1;
     private static final String TABLE_NAME="Order_Table";
     private static final String COL_ID="Order_id";
     private static final String COL_DISH_NAME="Dishn_ame";
     private static final String COL_QUANTITY="Quantity";
     private static final String COL_PRICE="Price";
+    private static final String COL_TOTAL="Total";
 
 
 
@@ -30,8 +34,7 @@ public class DatabaseHelper_order extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-
-        String querry="CREATE TABLE "+ TABLE_NAME+ " (" +COL_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+ COL_DISH_NAME +" TEXT, "+ COL_QUANTITY +" INTEGER," + COL_PRICE +" INTEGER );";
+        String querry="CREATE TABLE "+ TABLE_NAME+ " (" +COL_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT, "+ COL_DISH_NAME +" TEXT, "+ COL_QUANTITY +" INTEGER," + COL_PRICE +" INTEGER , "+ COL_TOTAL +" INTEGER);";
         db.execSQL(querry);
     }
 
@@ -40,12 +43,13 @@ public class DatabaseHelper_order extends SQLiteOpenHelper {
 
         db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
     }
-    public void addOrder(String dishName, int Qty, int price){
+    public void addOrder(String dishName, int Qty, int price,int total){
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues cv=new ContentValues();
         cv.put(COL_DISH_NAME,dishName);
         cv.put(COL_QUANTITY,Qty);
         cv.put(COL_PRICE,price);
+        cv.put(COL_TOTAL,total);
 
         long result=db.insert(TABLE_NAME,null,cv);
 
@@ -69,13 +73,14 @@ public class DatabaseHelper_order extends SQLiteOpenHelper {
         }
         return cursor;
     }
-    public void updateOrder(String row_id,String dishName,String quantity,String price){
+    public void updateOrder(String row_id,String dishName,String quantity,String price,String total){
 
-         SQLiteDatabase db=this.getWritableDatabase();
-         ContentValues cv=new ContentValues();
-         cv.put(COL_DISH_NAME,dishName);
+        SQLiteDatabase db=this.getWritableDatabase();
+        ContentValues cv=new ContentValues();
+        cv.put(COL_DISH_NAME,dishName);
         cv.put(COL_QUANTITY,quantity);
         cv.put(COL_PRICE,price);
+        cv.put(COL_TOTAL,total);
 
 
         long result=db.update(TABLE_NAME,cv,"Order_ID =?",new String[]{row_id});
@@ -101,6 +106,32 @@ public class DatabaseHelper_order extends SQLiteOpenHelper {
     void deleteAllData(){
         SQLiteDatabase db=this.getWritableDatabase();
         db.execSQL("DELETE FROM "+TABLE_NAME);
+    }
+
+
+    public int getTotal(){
+        SQLiteDatabase db=this.getReadableDatabase();
+
+        int total = 0;
+        String[] column= new String[]{COL_ID,COL_DISH_NAME,COL_QUANTITY,COL_PRICE,COL_TOTAL};
+        Cursor c=db.query(TABLE_NAME,column,null,null,null,null,null);
+
+
+
+
+        if (c.getCount()>0){
+            for (c.moveToFirst();!c.isAfterLast();c.moveToNext()){
+                total=total+c.getInt(c.getColumnIndex(COL_TOTAL));;
+            }
+        }
+
+        /*
+        Cursor cursor=db.rawQuery("SELECT SUM("+COL_TOTAL+") FROM "+TABLE_NAME,null);
+        if (cursor.moveToFirst()){
+             total=cursor.getInt(cursor.getColumnIndex("Total"));
+        }*/
+        return total;
+
     }
 
 }
