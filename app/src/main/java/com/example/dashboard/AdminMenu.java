@@ -17,11 +17,11 @@ public class AdminMenu extends AppCompatActivity {
     Button view_recipe;
     ListView menu;
     DatabaseHelper myDB;
-    ProductAdapterList adapter;
+    AdminMenuAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_admin_menu);
         myDB = new DatabaseHelper(this);
         menu = (ListView) findViewById(R.id.menu);
         view_recipe = (Button)findViewById(R.id.viewbtn);
@@ -30,7 +30,7 @@ public class AdminMenu extends AppCompatActivity {
     }
     private void loadData() {
         menulist = myDB.displayMenu();
-        adapter = new ProductAdapterList(menulist, this);
+        adapter = new AdminMenuAdapter(menulist, this);
         menu.setAdapter(adapter);
     }
 

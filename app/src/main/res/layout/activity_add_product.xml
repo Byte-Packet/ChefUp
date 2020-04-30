@@ -51,79 +51,43 @@
             <EditText
                 android:id="@+id/recipe"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="205dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/textbox"
                 android:ems="10"
                 android:hint="Recipe"
-                android:inputType="textPersonName" />
+                android:inputType="textMultiLine" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+            <EditText
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textbox"
+                android:ems="10"
+                android:hint="Price"
+                android:inputType="numberDecimal"
+                android:layout_weight="1"/>
+            <Spinner
+                android:id="@+id/cuisine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textbox"
+                android:entries="@array/cuisine_array"
+                android:prompt="@id/cuisine"
+                android:ems="10"
+                android:hint="Recipe"
+                android:inputType="textPersonName"
+                android:layout_weight="1"/>
+
+</LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingHorizontal="25dp">
 
-            <RadioButton
-                android:id="@+id/cuisine1"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:text="Sri Lankan" />
-
-            <RadioButton
-                android:id="@+id/cuisine2"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:text="Indian" />
-
-            <RadioButton
-                android:id="@+id/cuisine3"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:text="Italian" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingHorizontal="25dp">
-
-            <RadioButton
-                android:id="@+id/cuisine4"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:text="American" />
-
-            <RadioButton
-                android:id="@+id/cuisine5"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:text="Arabic" />
-
-            <RadioButton
-                android:id="@+id/cuisine6"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:text="Chinese" />
-
-        </LinearLayout>
 <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"

@@ -20,7 +20,7 @@
         android:layout_marginTop="10dp"
         android:padding="10dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="220dp"
         android:background="@drawable/layout_bottom"
         android:orientation="horizontal">
 
@@ -59,7 +59,9 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:hint="Dish name"
-                     />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -82,7 +84,9 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:hint="Quantity"
-                   />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dishName" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -105,8 +109,29 @@
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:hint="Price"
-                    />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/quantity" />
+
             </LinearLayout>
+
+
+
+
+            <TextView
+                android:id="@+id/total2"
+                android:layout_marginLeft="80dp"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="total price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/price"
+
+                />
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"

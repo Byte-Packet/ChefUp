@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,9 +27,11 @@ public class Order extends AppCompatActivity {
     RecyclerView recyclerView;
     FloatingActionButton add_button;
 
+    TextView sum_of_total;
+
     DatabaseHelper_order myDb;
 
-    ArrayList<String> order_id,dish_name,quantity,price;
+    ArrayList<String> order_id,dish_name,quantity,price,total;
 
     CustomAdapter customAdapter;
     @Override
@@ -36,6 +39,7 @@ public class Order extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
 
+        sum_of_total=findViewById(R.id.totalValue);
         recyclerView=findViewById(R.id.recyclerview);
         add_button=findViewById(R.id.addOrder);
         add_button.setOnClickListener(new View.OnClickListener() {
@@ -52,9 +56,11 @@ public class Order extends AppCompatActivity {
         dish_name=new ArrayList<>();
         quantity=new ArrayList<>();
         price=new ArrayList<>();
+        total=new ArrayList<>();
 
+        sum_of_total.setText(Integer.toString(myDb.getTotal()));
         storeDataInArrays();
-        customAdapter=new CustomAdapter(Order.this,Order.this,order_id,dish_name,quantity,price);
+        customAdapter=new CustomAdapter(Order.this,Order.this,order_id,dish_name,quantity,price,total);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(Order.this));
 
@@ -83,6 +89,7 @@ public class Order extends AppCompatActivity {
                 dish_name.add(cursor.getString(1));
                 quantity.add(cursor.getString(2));
                 price.add(cursor.getString(3));
+                total.add(cursor.getString(4));
             }
         }
     }

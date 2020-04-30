@@ -42,4 +42,16 @@
     <string name="update">Update</string>
     <string name="already">Already Have an account</string>
 
+    <string name="cuisine">Cuisine</string>
+    <string name="cuisine_prompt">Choose Cuisine</string>
+
+    <string-array name="cuisine_array">
+        <item>Sri Lankan</item>
+        <item>American</item>
+        <item>Indonesian</item>
+        <item>Indian</item>
+        <item>Italian</item>
+        <item>Chinese</item>
+    </string-array>
+
 </resources>

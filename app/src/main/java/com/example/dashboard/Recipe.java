@@ -32,17 +32,14 @@ public class Recipe extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
 
+
         image = (ImageView)findViewById(R.id.pic);
         myDB = new DatabaseHelper(this);
         id = (TextView)findViewById(R.id.idview);
-        id.setText(getIntent().getStringExtra("Name"));
         //textView2.setText(getIntent().getStringExtra("Address"));
         prodList = new ArrayList<>();
-
-        id.setText("Thayoli");
+        //id.setText(prod.getName());
         /*textView2.setText(getIntent().getStringExtra("Address"));
         textView3.setText(getIntent().getStringExtra("Email"));*/
-
-
     }
 }
