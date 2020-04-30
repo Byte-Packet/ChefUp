@@ -52,7 +52,7 @@ public class Order extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(Order.this,AddOrder.class);
+                Intent intent=new Intent(Order.this, com.example.dashboard.Menu.class);
                 startActivity(intent);
             }
         });

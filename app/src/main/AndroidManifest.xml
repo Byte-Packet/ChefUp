@@ -32,6 +32,7 @@
         <activity android:name=".add_payment_method" />
         <activity android:name=".cash" />
         <activity android:name=".Recipe" />
+
         <activity
             android:name=".Menu"
             android:parentActivityName=".Login" />
